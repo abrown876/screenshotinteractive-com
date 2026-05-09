@@ -1,0 +1,56 @@
+{
+  "_comment": "Edit this file to control banners and dynamic content. Push to your host (Netlify auto-deploys on git push, or drag-drop the site folder). Live event takes priority over Social Cine' tickets banner.",
+  "liveEvents": [
+    {
+      "name": "Wednesday Quiz Night",
+      "venue": "Stush Wine Bar",
+      "startTime": "2026-05-13T19:30:00",
+      "endTime": "2026-05-13T22:00:00",
+      "isLive": false
+    }
+  ],
+  "socialCineEditions": [
+    {
+      "editionName": "Women's Day Edition",
+      "eventDate": "2026-03-08",
+      "venue": "Devon House",
+      "ticketsOnSale": false
+    },
+    {
+      "editionName": "Easter Weekend",
+      "eventDate": "2026-04-04",
+      "venue": "Devon House",
+      "ticketsOnSale": false
+    },
+    {
+      "editionName": "Mother's Day Weekend",
+      "eventDate": "2026-05-26",
+      "venue": "Devon House",
+      "ticketsOnSale": true
+    },
+    {
+      "editionName": "Father's Day Weekend",
+      "eventDate": "2026-06-21",
+      "venue": "Devon House",
+      "ticketsOnSale": false
+    },
+    {
+      "editionName": "Summer Edition",
+      "eventDate": "2026-07-12",
+      "venue": "Devon House",
+      "ticketsOnSale": false
+    },
+    {
+      "editionName": "Independence Weekend",
+      "eventDate": "2026-08-01",
+      "venue": "Devon House",
+      "ticketsOnSale": false
+    },
+    {
+      "editionName": "Christmas Edition",
+      "eventDate": "2026-12-19",
+      "venue": "Devon House",
+      "ticketsOnSale": false
+    }
+  ]
+}
