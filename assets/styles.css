@@ -183,7 +183,7 @@ footer.site .bottom{margin-top:32px;padding-top:18px;border-top:1px solid rgba(2
 .creator{background:var(--white);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
 .creator:hover{transform:translateY(-3px);border-color:var(--navy);box-shadow:0 16px 40px -20px rgba(11,31,58,.2)}
 .creator-pic{aspect-ratio:1;position:relative;overflow:hidden;background:var(--offwhite)}
-.creator-pic img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block}
+.creator-pic img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block}
 .creator-body{padding:16px;display:flex;flex-direction:column;gap:10px;flex:1}
 
 /* Header block */
