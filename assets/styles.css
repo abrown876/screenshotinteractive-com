@@ -480,3 +480,20 @@ footer.site .brand-mark,
 .checkbox-group .checkbox input:checked + *,.checkbox-group label.checkbox:has(input:checked){border-color:var(--red);background:rgba(235,92,119,.08)}
 
 .creator .audience-label{font-family:Archivo,sans-serif;font-size:9px;font-weight:800;color:var(--gray);letter-spacing:0.14em;text-transform:uppercase;margin:6px 0 -2px}
+/* Digital Advertising — placements section */
+.ad-placements{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+@media(max-width:880px){.ad-placements{grid-template-columns:1fr}}
+.ad-card{background:var(--white);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.ad-card:hover{transform:translateY(-3px);border-color:var(--navy);box-shadow:0 16px 40px -20px rgba(11,31,58,.18)}
+.ad-pic{aspect-ratio:16/9;background:var(--offwhite);position:relative;overflow:hidden}
+.ad-pic-billboard{background:linear-gradient(135deg,#1A1033,#5B2D8E);display:flex;align-items:center;justify-content:center}
+.ad-pic-billboard::after{content:"\1F4FA";font-size:96px;opacity:.4}
+.ad-pic-tabletab{background:linear-gradient(135deg,#7B3FB5,#EB5C77);display:flex;align-items:center;justify-content:center}
+.ad-pic-tabletab::after{content:"\1F4F1";font-size:96px;opacity:.5}
+.ad-body{padding:24px;display:flex;flex-direction:column;gap:10px}
+.ad-tag{font-family:Archivo,sans-serif;font-size:11px;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:0.1em}
+.ad-card h3{font-family:'Nexa Black','Archivo Black',sans-serif;font-size:24px;color:var(--navy);font-weight:900;letter-spacing:-0.01em;line-height:1.1}
+.ad-card p{font-size:14px;line-height:1.55;color:#333;margin:0}
+.ad-bullets{list-style:none;padding:0;margin:6px 0 0;display:flex;flex-direction:column;gap:6px}
+.ad-bullets li{position:relative;padding-left:20px;font-size:13px;color:var(--char)}
+.ad-bullets li::before{content:"";position:absolute;left:0;top:6px;width:10px;height:10px;background:var(--red);border-radius:99px}
