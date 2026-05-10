@@ -77,9 +77,9 @@ body.live .nav-items a.play-link::before{content:"";width:8px;height:8px;border-
 /* Logo bar */
 .trust{padding:32px 0;background:var(--white);border-bottom:1px solid var(--line)}
 .trust .label{text-align:center;color:var(--gray);font-family:Archivo,sans-serif;font-weight:700;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:16px}
-.trust-row{display:grid;grid-template-columns:repeat(6,1fr);gap:32px;align-items:center;justify-items:center;filter:grayscale(1);opacity:.85}
-.trust-row img{max-height:44px;width:auto}
-@media(max-width:780px){.trust-row{grid-template-columns:repeat(3,1fr);gap:24px}}
+.trust-row{display:grid;grid-template-columns:repeat(4,1fr);gap:64px;align-items:center;justify-items:center;filter:grayscale(1);opacity:.9;max-width:960px;margin:0 auto}
+.trust-row img{max-height:68px;max-width:100%;width:auto;object-fit:contain}
+@media(max-width:780px){.trust-row{grid-template-columns:repeat(2,1fr);gap:40px}.trust-row img{max-height:54px}}
 
 /* Section */
 .section{padding:60px 0}
