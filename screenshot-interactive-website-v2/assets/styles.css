@@ -111,6 +111,8 @@ body.live .nav-items a.play-link::before{content:"";width:8px;height:8px;border-
 .pillar.cine .pic{background:#000}
 .pillar .pic{margin:-36px -28px 24px;height:200px;overflow:hidden;background:var(--navy)}
 .pillar .pic img{height:100%;width:100%;object-fit:cover;opacity:.85}
+.pillar .pic.pic-logo{display:flex;align-items:center;justify-content:center;padding:18px}
+.pillar .pic.pic-logo img{height:auto;width:auto;max-height:100%;max-width:90%;object-fit:contain;opacity:1}
 
 /* Work grid */
 .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
