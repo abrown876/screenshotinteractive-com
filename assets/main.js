@@ -75,3 +75,13 @@
     });
   });
 })();
+
+
+// Auto-close mobile nav drawer when any nav link is tapped
+document.querySelectorAll('.nav-items a').forEach(function(a){
+  a.addEventListener('click', function(){
+    document.body.classList.remove('nav-open');
+    var hb = document.querySelector('.hamburger');
+    if (hb) hb.setAttribute('aria-expanded', 'false');
+  });
+});
