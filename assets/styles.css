@@ -701,9 +701,22 @@ footer.site .brand-mark,
   }
   body.nav-open .nav-items a:last-child { border-bottom: none; }
   body.nav-open .nav-items a:hover, body.nav-open .nav-items a.active { border-bottom-color: var(--line); color: var(--red); }
-  /* Hide stray header CTA on smallest mobile so hamburger has room */
-}
-@media (max-width: 480px) {
-  .headerCta { font-size: 0; padding: 10px; width: 40px; height: 40px; justify-content: center; }
-  .headerCta::before { content: "📞"; font-size: 16px; }
+  /* Hide the desktop "Get a quote" button on mobile — drawer has its own CTA */
+  .headerCta { display: none; }
+  /* Drawer-internal CTA — appended via main.js or styled if added */
+  body.nav-open .nav-items .nav-cta {
+    margin-top: 12px;
+    background: var(--red);
+    color: var(--white) !important;
+    text-align: center;
+    padding: 14px 20px;
+    border-radius: 999px;
+    border-bottom: none !important;
+    font-family: Archivo, sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 13px;
+  }
+  body.nav-open .nav-items .nav-cta:hover { background: #e0291d; border-bottom: none !important; }
 }
