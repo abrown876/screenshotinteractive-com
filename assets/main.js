@@ -61,7 +61,9 @@
     if (cta2) {
       var shortName = nextOnSale.editionName.replace(/\s+(Edition|Weekend|Run)$/i, '');
       cta2.textContent = '🎬 Tickets — ' + shortName;
-      cta2.setAttribute('href', '/social-cine/schedule');
+      cta2.setAttribute('href', 'https://www.eventbrite.com/o/social-cine-110324264541');
+      cta2.setAttribute('target', '_blank');
+      cta2.setAttribute('rel', 'noopener');
       cta2.style.background = '#FFC14D';
       cta2.style.color = '#0a0a0a';
     }
