@@ -412,7 +412,28 @@ img[src=""]{display:none}
 
 
 
-/* === Brand mark (S in dashed circle, recolors via currentColor) === */
-.brand-mark{display:inline-block;width:32px;height:32px;flex-shrink:0;background-color:currentColor;color:var(--navy);-webkit-mask:url(/assets/s-mark.svg) no-repeat center/contain;mask:url(/assets/s-mark.svg) no-repeat center/contain}
-.brand-mark-lg{width:64px;height:64px}
-.pillar.dark .brand-mark,.pillar.red .brand-mark,.pillar.cine .brand-mark,footer.site .brand-mark,.section-dark .brand-mark,.subpage-hero .brand-mark,.hero .brand-mark,.cine-hero .brand-mark,.st-hero .brand-mark{color:#fff}
+
+/* === Brand mark (S-in-dashed-circle, colors via currentColor mask) === */
+.brand-mark{
+  display:inline-block;
+  width:32px;
+  height:32px;
+  flex-shrink:0;
+  background-color:currentColor;
+  color:var(--navy);
+  -webkit-mask:url('/assets/s-mark.svg') no-repeat center/contain;
+  mask:url('/assets/s-mark.svg') no-repeat center/contain;
+}
+.brand-mark-lg{width:48px;height:48px}
+/* On dark backgrounds, mark is white */
+.pillar.dark .brand-mark,
+.pillar.red .brand-mark,
+.pillar.cine .brand-mark,
+footer.site .brand-mark,
+.section-dark .brand-mark,
+.subpage-hero .brand-mark,
+.hero .brand-mark,
+.cine-hero .brand-mark,
+.st-hero .brand-mark{
+  color:#fff;
+}
