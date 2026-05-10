@@ -22,7 +22,7 @@
 
 <div id="cineBanner">
   <span style="font-size:18px">🎬</span>
-  <span id="cineBannerText">TICKETS ON SALE — Mother's Day Edition · May 26 · Devon House</span>
+  <span id="cineBannerText">TICKETS ON SALE — Father's Day Weekend · June 21 · Devon House</span>
   <span style="color:rgba(255,255,255,.4)">·</span>
   <a href="/social-cine/schedule">Get tickets →</a>
 </div>
@@ -104,30 +104,20 @@
         <input id="eventDate" name="eventDate" type="date">
       </div>
       <div>
-        <label for="services">Services interested in</label>
-        <select id="services" name="services" multiple size="5">
-          <option>Magic Mirror</option>
-          <option>360 Video</option>
-          <option>Outdoor Cinema</option>
-          <option>Digital Advertising</option>
-          <option>Creator campaign</option>
-          <option>Screen Test</option>
-          <option>Social Cine'</option>
-          <option>Tents &amp; Power</option>
-          <option>Sound</option>
-        </select>
+        <label>Services interested in</label>
+        <div class="checkbox-group">
+          <label class="checkbox"><input type="checkbox" name="services[]" value="Magic Mirror"> Magic Mirror</label>
+          <label class="checkbox"><input type="checkbox" name="services[]" value="360 Video"> 360 Video</label>
+          <label class="checkbox"><input type="checkbox" name="services[]" value="Outdoor Cinema"> Outdoor Cinema</label>
+          <label class="checkbox"><input type="checkbox" name="services[]" value="Digital Advertising"> Digital Advertising</label>
+          <label class="checkbox"><input type="checkbox" name="services[]" value="Creator campaign"> Creator campaign</label>
+          <label class="checkbox"><input type="checkbox" name="services[]" value="Screen Test"> Screen Test</label>
+          <label class="checkbox"><input type="checkbox" name="services[]" value="Social Cine'"> Social Cine'</label>
+          <label class="checkbox"><input type="checkbox" name="services[]" value="Tents & Power"> Tents &amp; Power</label>
+          <label class="checkbox"><input type="checkbox" name="services[]" value="Sound"> Sound</label>
+        </div>
       </div>
-      <div>
-        <label for="budget">Budget range (JMD)</label>
-        <select id="budget" name="budget">
-          <option value="">Select…</option>
-          <option>Under $500k</option>
-          <option>$500k–$1M</option>
-          <option>$1M–$3M</option>
-          <option>$3M+</option>
-          <option>Not sure yet</option>
-        </select>
-      </div>
+      
       <div>
         <label for="message">Tell us more</label>
         <textarea id="message" name="message" rows="4" required></textarea>

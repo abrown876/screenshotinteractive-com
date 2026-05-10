@@ -437,3 +437,11 @@ footer.site .brand-mark,
 .st-hero .brand-mark{
   color:#fff;
 }
+
+/* Contact form checkbox group */
+.checkbox-group{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 16px;margin-top:6px}
+@media(max-width:560px){.checkbox-group{grid-template-columns:1fr}}
+.checkbox-group .checkbox{display:flex;align-items:center;gap:8px;font-family:Inter,sans-serif;font-size:14px;color:var(--char);font-weight:400;text-transform:none;letter-spacing:0;cursor:pointer;margin:0;padding:8px 12px;border:1px solid var(--line);border-radius:6px;transition:border-color .15s ease,background .15s ease}
+.checkbox-group .checkbox:hover{border-color:var(--navy);background:var(--offwhite)}
+.checkbox-group .checkbox input{width:16px;height:16px;margin:0;accent-color:var(--red)}
+.checkbox-group .checkbox input:checked + *,.checkbox-group label.checkbox:has(input:checked){border-color:var(--red);background:rgba(235,92,119,.08)}
