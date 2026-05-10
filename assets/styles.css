@@ -183,6 +183,7 @@ footer.site .bottom{margin-top:32px;padding-top:18px;border-top:1px solid rgba(2
 .creator:hover{transform:translateY(-2px);border-color:var(--navy)}
 .creator-pic{aspect-ratio:1;background:linear-gradient(135deg,#0B1F3A,#FF3B2E);position:relative;overflow:hidden}
 .creator-pic .initial{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:Archivo,sans-serif;font-weight:800;color:var(--white);font-size:48px;letter-spacing:-0.04em}
+.creator-pic img{width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block}
 .creator-body{padding:18px}
 .creator h5{font-family:Archivo,sans-serif;font-size:17px;color:var(--navy);font-weight:800}
 .creator .handle{font-size:13px;color:var(--gray);margin-bottom:10px}
