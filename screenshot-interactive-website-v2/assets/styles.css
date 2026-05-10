@@ -45,7 +45,10 @@ body.live #liveBanner{display:flex;align-items:center;justify-content:center;gap
 header.site{position:sticky;top:0;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:50}
 body.live header.site{top:38px}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;max-width:1240px;margin:0 auto;gap:24px}
-.brand{font-family:'Nexa Black','Archivo',sans-serif;font-weight:900;letter-spacing:-0.02em;font-size:20px;color:var(--navy);cursor:pointer;display:flex;align-items:center;gap:10px}
+.brand{display:flex;align-items:center;gap:10px;cursor:pointer;text-decoration:none}
+.brand-logo{height:36px;width:auto;display:block}
+.brand-logo-footer{height:40px;width:auto;display:block;margin-bottom:16px}
+@media(max-width:680px){.brand-logo{height:30px}}
 .brand .square{width:24px;height:24px;background:var(--navy);position:relative}
 .brand .square::after{content:"";position:absolute;inset:6px;background:var(--red)}
 .nav-items{display:flex;gap:26px;align-items:center;font-family:Archivo,sans-serif;font-weight:600;font-size:14px;letter-spacing:0.02em}
