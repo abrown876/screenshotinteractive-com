@@ -1,5 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" fill="#0B1F3A"/>
-  <rect x="16" y="16" width="32" height="32" fill="#FF3B2E"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" rx="40" fill="#595496"/>
+  <path d="M 100,28 A 72,72 0 1,1 99.99,28" fill="none" stroke="white" stroke-width="9" stroke-dasharray="160 20 80 0" stroke-linecap="round" transform="rotate(-45 100 100)"/>
+  <path fill="white" d="M 126,82
+    c -5,-6 -13,-9 -22,-9
+    c -13,0 -22,6 -22,17
+    c 0,9 7,13 21,15
+    l 6,1
+    c 13,2 21,6 21,17
+    c 0,11 -11,18 -26,18
+    c -11,0 -20,-2 -27,-10
+    l 7,-7
+    c 5,5 11,8 20,8
+    c 9,0 15,-3 15,-9
+    c 0,-5 -4,-8 -15,-10
+    l -7,-1
+    c -13,-2 -21,-7 -21,-18
+    c 0,-11 11,-18 25,-18
+    c 11,0 20,3 25,9 z"/>
 </svg>
