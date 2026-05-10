@@ -497,3 +497,16 @@ footer.site .brand-mark,
 .ad-bullets{list-style:none;padding:0;margin:6px 0 0;display:flex;flex-direction:column;gap:6px}
 .ad-bullets li{position:relative;padding-left:20px;font-size:13px;color:var(--char)}
 .ad-bullets li::before{content:"";position:absolute;left:0;top:6px;width:10px;height:10px;background:var(--red);border-radius:99px}
+
+
+/* About — Team grid */
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:24px;max-width:880px}
+@media(max-width:880px){.team-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.team-grid{grid-template-columns:1fr;max-width:340px}}
+.team-member{background:var(--white);border:1px solid var(--line);border-radius:8px;overflow:hidden;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.team-member:hover{transform:translateY(-2px);border-color:var(--navy);box-shadow:0 12px 32px -16px rgba(11,31,58,.18)}
+.team-pic{aspect-ratio:1;overflow:hidden;background:var(--offwhite)}
+.team-pic img{width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block}
+.team-body{padding:14px 16px}
+.team-member h5{font-family:'Nexa Black','Archivo Black',sans-serif;font-size:17px;color:var(--navy);font-weight:900;letter-spacing:-0.01em;line-height:1.1;margin:0 0 4px}
+.team-member .role{font-family:Archivo,sans-serif;font-size:11px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:0.1em}
