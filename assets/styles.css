@@ -93,7 +93,7 @@ body.live .nav-items a.play-link::before{content:"";width:8px;height:8px;border-
 @media(max-width:560px){.pillars{grid-template-columns:1fr}}
 .pillar{position:relative;background:var(--offwhite);padding:36px 28px;border-radius:8px;min-height:340px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .2s ease,box-shadow .2s ease;cursor:pointer;overflow:hidden}
 .pillar:hover{transform:translateY(-4px);box-shadow:0 20px 60px -20px rgba(11,31,58,.25)}
-.pillar h3{margin-bottom:12px}
+.pillar h3{margin-bottom:12px;line-height:1.15;min-height:2.3em;display:flex;align-items:flex-end}
 .pillar p{font-size:16px;color:#333}
 .pillar .arrow{font-family:Archivo,sans-serif;font-weight:800;color:var(--red);margin-top:24px;font-size:14px;letter-spacing:0.06em;text-transform:uppercase}
 .pillar.dark{background:var(--navy);color:var(--white)}
