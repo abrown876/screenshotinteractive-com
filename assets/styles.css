@@ -727,3 +727,11 @@ footer.site .brand-mark,
 @media (max-width: 980px) {
   body.nav-open .nav-items .nav-cta { display: block; }
 }
+
+
+/* Instagram embed grid (homepage) */
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
+@media(max-width:980px){.ig-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.ig-grid{grid-template-columns:1fr;max-width:540px;margin:0 auto}}
+.ig-cell{min-width:0}
+.ig-cell .instagram-media{margin:0 !important;width:100% !important;min-width:0 !important;max-width:100% !important}
