@@ -729,11 +729,8 @@ footer.site .brand-mark,
 }
 
 
-/* Instagram embed iframes (homepage) */
+/* Instagram blockquote embeds (homepage) */
 .ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start;max-width:1080px;margin:0 auto}
-@media(max-width:780px){.ig-grid{grid-template-columns:repeat(3,1fr);gap:8px}}
-.ig-cell{min-width:0;background:transparent;border-radius:0;overflow:hidden}
-.ig-cell iframe{width:100%;min-width:0;height:560px;border:0;border-radius:12px;background:#fff;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)}
-@media(max-width:780px){.ig-cell iframe{height:440px}}
-@media(max-width:560px){.ig-cell iframe{height:380px}}
-@media(max-width:380px){.ig-cell iframe{height:340px}}
+@media(max-width:980px){.ig-grid{grid-template-columns:1fr;max-width:540px;gap:24px}}
+.ig-cell{min-width:0}
+.ig-cell .instagram-media{margin:0 !important;width:100% !important;min-width:0 !important;max-width:100% !important}
