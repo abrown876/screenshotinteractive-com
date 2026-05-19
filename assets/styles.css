@@ -729,9 +729,16 @@ footer.site .brand-mark,
 }
 
 
-/* Instagram embed grid (homepage) */
-.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch;max-width:1100px;margin:0 auto}
-@media(max-width:780px){.ig-grid{grid-template-columns:repeat(3,1fr);gap:10px}}
-.ig-cell{min-width:0;background:#fff;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
-.ig-cell iframe{width:100%;aspect-ratio:9/14;border:0;display:block;background:#fff}
-@media(max-width:560px){.ig-cell iframe{aspect-ratio:9/15}}
+/* Instagram thumbnail cards (homepage) */
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch;max-width:1000px;margin:0 auto}
+@media(max-width:780px){.ig-grid{gap:12px}}
+.ig-cell{min-width:0;background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--line);text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.ig-cell:hover{transform:translateY(-4px);box-shadow:0 18px 40px -20px rgba(11,31,58,.25);border-color:var(--navy)}
+.ig-thumb{aspect-ratio:9/16;position:relative;background:linear-gradient(135deg,#833AB4 0%,#E1306C 50%,#F77737 100%);display:flex;align-items:center;justify-content:center;color:#fff;overflow:hidden}
+.ig-thumb::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.15),transparent 60%)}
+.ig-thumb .ig-play{position:relative;font-size:54px;line-height:1;background:rgba(255,255,255,.18);border:2.5px solid rgba(255,255,255,.85);width:88px;height:88px;border-radius:99px;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);padding-left:6px;transition:transform .2s ease,background .2s ease}
+.ig-cell:hover .ig-thumb .ig-play{transform:scale(1.08);background:rgba(255,255,255,.32)}
+.ig-thumb .ig-reel-label{position:absolute;top:14px;right:14px;font-family:Archivo,sans-serif;font-size:11px;font-weight:800;letter-spacing:0.14em;background:rgba(0,0,0,.4);padding:5px 10px;border-radius:99px;backdrop-filter:blur(8px)}
+.ig-meta{padding:14px 16px;display:flex;flex-direction:column;gap:4px;background:#fff}
+.ig-handle{font-family:'Nexa Black','Archivo Black',sans-serif;font-size:14px;color:var(--navy);font-weight:900;letter-spacing:-0.01em}
+.ig-cta{font-family:Archivo,sans-serif;font-size:11px;font-weight:700;color:var(--red);letter-spacing:0.06em;text-transform:uppercase}
