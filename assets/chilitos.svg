@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" preserveAspectRatio="xMidYMid meet">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 380" preserveAspectRatio="xMidYMid meet">
   <style>
-    .wordmark { font-family: 'Anton','Bebas Neue','Archivo Black','Impact',sans-serif; font-weight: 900; fill: #1A1A1A; letter-spacing: -0.01em }
+    .wordmark { font-family: 'Anton','Bebas Neue','Archivo Black','Impact',sans-serif; font-weight: 900; fill: #1A1A1A; letter-spacing: -0.005em }
     .tagline  { font-family: 'Quicksand','Comfortaa','Archivo','Inter',sans-serif; font-weight: 700; fill: #1A1A1A; letter-spacing: 0.16em }
   </style>
   <!-- Flame accent above the Í -->
-  <path d="M 244,40 Q 250,18 264,30 Q 256,46 254,62 Q 246,52 244,40 Z" fill="#1A1A1A"/>
+  <path d="M 286,52 Q 292,28 308,40 Q 298,58 296,76 Q 288,64 286,52 Z" fill="#1A1A1A"/>
   <!-- CHÍLITOS wordmark -->
-  <text x="300" y="220" text-anchor="middle" font-size="220" class="wordmark">CHÍLITOS</text>
+  <text x="350" y="270" text-anchor="middle" font-size="240" class="wordmark">CHÍLITOS</text>
   <!-- JAMEXICAN FOOD tagline -->
-  <text x="300" y="285" text-anchor="middle" font-size="32" class="tagline">JAMEXICAN FOOD</text>
+  <text x="350" y="345" text-anchor="middle" font-size="34" class="tagline">JAMEXICAN FOOD</text>
 </svg>
