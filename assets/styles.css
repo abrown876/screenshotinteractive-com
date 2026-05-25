@@ -67,7 +67,7 @@ body.live .nav-items a.play-link::before{content:"";width:8px;height:8px;border-
 .hero{position:relative;min-height:62vh;display:flex;align-items:center;background:var(--navy);color:var(--white);overflow:hidden}
 .hero-media{position:absolute;inset:0}
 .hero-media img{width:100%;height:100%;object-fit:cover}
-.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(89,84,150,.05) 0%,rgba(89,84,150,.15) 100%)}
+.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(89,84,150,.15) 0%,rgba(89,84,150,.4) 100%)}
 .hero-inner{position:relative;width:100%;padding:56px 28px}
 .hero h1{color:var(--white);max-width:14ch;margin-bottom:18px}
 .hero .sub{color:rgba(255,255,255,.85);max-width:60ch;font-size:19px;margin-bottom:24px}
