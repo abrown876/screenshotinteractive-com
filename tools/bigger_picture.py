@@ -29,7 +29,7 @@ esc = html.escape
 def load_stories():
     stories = [json.loads(p.read_text()) for p in sorted(CONTENT.glob('*.json'))]
     stories = [s for s in stories if not s.get('draft')]
-    stories.sort(key=lambda s: (s['date'], s['slug']), reverse=True)
+    stories.sort(key=lambda s: (s['date'], -s.get('rank', 99)), reverse=True)
     return stories
 
 
@@ -135,7 +135,7 @@ def tile(s):
 
 def index(stories, top, foot, style):
     url = f'{SITE}/{SECTION}'
-    desc = 'Industry news, numbers and know-how on activations, creators and digital outdoor advertising, from Screenshot Interactive.'
+    desc = 'Marketing, events and creator news from Jamaica, the Caribbean and the diaspora, from Screenshot Interactive.'
     tiles = ''.join(tile(s) for s in stories)
     img = SITE + card_url(stories[0]) if stories else SITE + '/assets/og-default.jpg'
     return head(f'{NAME} | Industry news from Screenshot Interactive', desc, url, img, style) + top + f"""
@@ -144,7 +144,7 @@ def index(stories, top, foot, style):
     <div class="container">
       <div class="eyebrow">Industry update</div>
       <h1>{NAME}</h1>
-      <p>What is changing in activations, creators and digital outdoor advertising, and what it means for brands in Jamaica. New stories every week.</p>
+      <p>Marketing, events and creator news from Jamaica, the Caribbean and the diaspora, plus the global stories that matter here. New stories every week.</p>
       <a class="tbp-follow" href="https://www.instagram.com/screenshotja" target="_blank" rel="noopener">Follow on Instagram @screenshotja →</a>
     </div>
   </section>
@@ -217,16 +217,18 @@ def src_line(s):
 
 def card_cover(s):
     c = s['card']
+    stat_px = 200 if len(s.get('stat', '')) <= 6 else int(200 * 6.4 / len(s['stat']))
     photo = (ROOT / c['photo'].lstrip('/')).as_uri()
     stat = f'<div class=stat>{esc(s["stat"])}</div><div class=statl>{esc(s["statLabel"])}</div><div class=rule></div>' if s.get('stat') else '<div class=rule></div>'
     return f"""<style>{fonts_css()}
 body{{color:#fff;background:#141228 url('{photo}') {c.get('focal', 'center')}/{c.get('size', 'cover')} no-repeat;position:relative}}
+.wrap .tbp{{text-shadow:0 2px 14px rgba(0,0,0,.7),0 0 2px rgba(0,0,0,.5)}}
 .shade{{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.68) 0%,rgba(0,0,0,.25) 12%,rgba(0,0,0,0) 22%,rgba(0,0,0,0) 36%,rgba(20,18,40,.96) 58%)}}
 .wrap{{position:absolute;inset:0;padding:64px 72px;display:flex;flex-direction:column}}
 .top{{display:flex;justify-content:space-between;align-items:center}}
 .cat{{font:800 20px Archivo;letter-spacing:.18em;text-transform:uppercase;border:2px solid #fff;padding:9px 16px;border-radius:999px}}
 .bottom{{margin-top:auto}}
-.stat{{font-family:Nexa;font-size:200px;line-height:.85;letter-spacing:-.04em}}
+.stat{{font-family:Nexa;font-size:{stat_px}px;line-height:.85;letter-spacing:-.04em}}
 .statl{{font:600 32px/1.25 Inter;margin:18px 0 26px;max-width:760px;color:rgba(255,255,255,.9)}}
 .rule{{width:120px;height:8px;background:#EB5C77;margin-bottom:26px}}
 h1{{font-family:Nexa;font-size:{s['card'].get('h1', 72)}px;line-height:1.03;letter-spacing:-.02em}}

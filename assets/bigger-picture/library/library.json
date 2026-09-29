@@ -92,6 +92,20 @@
       "source": "existing site asset",
       "approved": true,
       "clientBranded": false
+    },
+    {
+      "file": "/assets/bigger-picture/library/creators/justin-whitelocke-portrait.jpg",
+      "category": "creators",
+      "creator": "Justin Whitelocke",
+      "description": "Justin Whitelocke (JustInJA) studio portrait, cream tee, grey backdrop",
+      "focal": "center 20%",
+      "size": [
+        1359,
+        2048
+      ],
+      "source": "Supplied by Andrew Brown",
+      "approved": true,
+      "clientBranded": false
     }
   ],
   "usage": []

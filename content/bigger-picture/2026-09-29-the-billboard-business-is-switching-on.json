@@ -1,0 +1,44 @@
+{
+  "slug": "the-billboard-business-is-switching-on",
+  "rank": 5,
+  "title": "The billboard business is switching on.",
+  "dek": "In the US, the fastest-growing part of outdoor advertising is not a new format. It is the old billboard, made digital. Here is what that means for advertisers in Jamaica.",
+  "date": "2026-09-29",
+  "category": "Digital Out-of-Home",
+  "type": "news",
+  "stat": "14.5%",
+  "statLabel": "projected 2026 growth in US digital billboard spend",
+  "photo": "/assets/bigger-picture/library/billboard/chilitos-board-traffic.jpg",
+  "photoCaption": "The Chilitos Digital Billboard on Hope Road, Kingston.",
+  "card": {
+    "style": "cover",
+    "photo": "/assets/bigger-picture/library/billboard/chilitos-board-traffic.jpg",
+    "focal": "26% -40px",
+    "size": "auto 64%",
+    "headline": "Screens are winning the street."
+  },
+  "body": [
+    "<p>Outdoor advertising is one of the oldest media there is, and in the world's biggest ad market it is being rebuilt screen by screen. Media intelligence firm Guideline expects US spending on digital billboards to grow 14.5% this year. Printed billboards are expected to grow 1.5%.</p>",
+    "<p>The detail behind the headline is more interesting than the headline. Guideline found that almost none of that digital growth comes from advertisers switching away from printed boards. It is new money, from brands that were not buying outdoor at all. The growth is also slowing from recent years, and Guideline puts that down largely to a shortage of screens to buy.</p>",
+    "<p>So screens are not simply a shinier billboard. They bring in a different kind of advertiser.</p>",
+    "<h3>Why screens pull in new advertisers</h3>",
+    "<ul><li><strong>No print, no install.</strong> Creative goes live when the file is ready, not when the vinyl is.</li><li><strong>The message can change by the day.</strong> A weekend promotion, a Monday launch and a same-day event reminder can all run on the same board.</li><li><strong>The location is shared.</strong> Several brands rotate on one screen, so a strong spot costs a fraction of owning a static face.</li><li><strong>Creative can be tested and swapped.</strong> If a message is not landing, replace it instead of living with it for a month.</li></ul>",
+    "<h3>What it means in Jamaica</h3>",
+    "<p>The advertisers who gain most from a screen are the ones a printed billboard never suited: restaurants with daily specials, events with a countdown, retailers with a weekend sale, and brands that want presence on a busy road without locking into one creative for months. What decides whether it works is the same everywhere: a location with real daily traffic, and creative built for a glance. One message, big type, a clear next step.</p>"
+  ],
+  "takeaway": "Screens win because they are flexible, not because they are digital. Buy the flexibility: short flights, timely messages and fresh creative.",
+  "service": {
+    "label": "Advertise on the Chilitos Digital Billboard, Hope Road",
+    "href": "/activations/digital-advertising"
+  },
+  "sources": [
+    {
+      "title": "US out-of-home ad spend hits $4B in 2026, but digital screens face a slowdown",
+      "publisher": "PPC Land, reporting Guideline data",
+      "date": "2026-03-09",
+      "url": "https://ppc.land/us-out-of-home-ad-spend-hits-4b-in-2026-but-digital-screens-face-a-slowdown/"
+    }
+  ],
+  "cardSource": "Source: Guideline, via PPC Land (Mar 2026)",
+  "caption": "In the US, digital billboards are projected to grow 14.5% this year. Printed billboards: 1.5%.\n\nThe twist: almost none of that is advertisers switching from print. Screens are bringing in brands that never bought outdoor before. What that means in Jamaica: link in bio.\n\nSource: Guideline, via PPC Land.\n\n#TheBiggerPicture #DOOH #DigitalBillboard #Kingston #Jamaica"
+}
