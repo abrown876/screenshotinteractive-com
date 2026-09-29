@@ -1,0 +1,98 @@
+{
+  "_comment": "The Bigger Picture photo library. Only photos cleared for public use. The workflow picks by category, avoids anything used in the last 60 days (see usage), and uses clientBranded photos only for stories about that type of activation.",
+  "photos": [
+    {
+      "file": "/assets/bigger-picture/library/billboard/chilitos-board-hero.jpg",
+      "category": "billboard",
+      "description": "Chilitos digital billboard, Hope Road \u2014 front view, \"Our billboard is live\" creative",
+      "focal": "center 40%",
+      "size": [
+        1600,
+        900
+      ],
+      "source": "Google Drive \u2014 Screenshot Interactive Ltd.",
+      "approved": true,
+      "clientBranded": false
+    },
+    {
+      "file": "/assets/bigger-picture/library/billboard/chilitos-board-traffic.jpg",
+      "category": "billboard",
+      "description": "Chilitos digital billboard with Hope Road traffic and a JUTC bus passing",
+      "focal": "35% 45%",
+      "size": [
+        1600,
+        900
+      ],
+      "source": "Google Drive \u2014 Screenshot Interactive Ltd.",
+      "approved": true,
+      "clientBranded": false
+    },
+    {
+      "file": "/assets/bigger-picture/library/market/kingston-aerial.jpg",
+      "category": "market",
+      "description": "Aerial of Kingston toward the Blue Mountains \u2014 general Jamaica market stories",
+      "focal": "center 60%",
+      "size": [
+        1600,
+        900
+      ],
+      "source": "Google Drive \u2014 Screenshot Interactive Ltd.",
+      "approved": true,
+      "clientBranded": false
+    },
+    {
+      "file": "/assets/bigger-picture/library/magic-mirror/jwn-safety-day-strip-1.jpg",
+      "category": "magic-mirror",
+      "description": "Magic Mirror 2x6 print strip, J. Wray & Nephew Safety Day 2026 (client-branded)",
+      "focal": "center 30%",
+      "size": [
+        1200,
+        1800
+      ],
+      "source": "Google Drive \u2014 Screenshot Interactive Ltd.",
+      "approved": true,
+      "clientBranded": true
+    },
+    {
+      "file": "/assets/bigger-picture/library/magic-mirror/jwn-safety-day-strip-2.jpg",
+      "category": "magic-mirror",
+      "description": "Magic Mirror 2x6 print strip, J. Wray & Nephew Safety Day 2026 (client-branded)",
+      "focal": "center 30%",
+      "size": [
+        1200,
+        1800
+      ],
+      "source": "Google Drive \u2014 Screenshot Interactive Ltd.",
+      "approved": true,
+      "clientBranded": true
+    },
+    {
+      "file": "/assets/creatorteam-2026.jpg",
+      "category": "creators",
+      "description": "Screenshot creator roster group shoot, March 2026",
+      "focal": "center",
+      "source": "existing site asset",
+      "approved": true,
+      "clientBranded": false
+    },
+    {
+      "file": "/assets/social-cine-hero.jpg",
+      "category": "social-cine",
+      "description": "Social Cine' outdoor cinema at Devon House",
+      "focal": "center",
+      "source": "existing site asset",
+      "approved": true,
+      "clientBranded": false
+    },
+    {
+      "file": "/assets/digital-billboard.jpg",
+      "category": "billboard",
+      "description": "Digital billboard photo already used on the site",
+      "focal": "center",
+      "source": "existing site asset",
+      "approved": true,
+      "clientBranded": false
+    }
+  ],
+  "usage": []
+}
