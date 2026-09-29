@@ -10,12 +10,7 @@
   "photo": "/assets/bigger-picture/library/creators/justin-whitelocke-portrait.jpg",
   "photoCaption": "Justin Whitelocke, @just_in_ja.",
   "card": {
-    "style": "cover",
-    "photo": "/assets/bigger-picture/library/creators/justin-whitelocke-portrait.jpg",
-    "focal": "center 0%",
-    "size": "100% auto",
-    "headline": "The Jamaica beyond the resort gate.",
-    "h1": 78
+    "style": "spotlight"
   },
   "body": [
     "<p>Justin Whitelocke's Jamaica has Maroon villages, family farms, the Blue Mountains and community-run eco-adventures in it. As @just_in_ja, the Kingston-based creator has built an audience of more than 237,000 on Instagram and 81,000 on TikTok by making those places feel close enough to visit.</p>",
@@ -45,5 +40,47 @@
   ],
   "sourceNote": "Audience figures from Screenshot's Creator Network roster.",
   "cardSource": "Creator Spotlight · @just_in_ja",
-  "caption": "Maroon villages, family farms, fishermen at first light. @just_in_ja shows the Jamaica most visitors never reach, and 300,000+ followers come along for it.\n\nMeet the creator who hosted the Tourist Board's \"There's Always More to Jamaica\" campaign: link in bio.\n\n#TheBiggerPicture #CreatorSpotlight #JustInJA #VisitJamaica #Jamaica"
+  "caption": "Maroon villages, family farms, fishermen at first light. @just_in_ja shows the Jamaica most visitors never reach, and 300,000+ followers come along for it.\n\nMeet the creator who hosted the Tourist Board's \"There's Always More to Jamaica\" campaign: link in bio.\n\n#TheBiggerPicture #CreatorSpotlight #JustInJA #VisitJamaica #Jamaica",
+  "creator": {
+    "name": "Justin Whitelocke",
+    "alias": "JustInJA",
+    "handle": "@just_in_ja",
+    "cutout": "/assets/bigger-picture/library/creators/justin-whitelocke-cutout.png",
+    "hook": "The Jamaica beyond the resort gate.",
+    "stats": [
+      [
+        "237K",
+        "Instagram"
+      ],
+      [
+        "81.6K",
+        "TikTok"
+      ],
+      [
+        "6.3%",
+        "IG engagement"
+      ]
+    ],
+    "niches": [
+      "Travel",
+      "Culture",
+      "Nature"
+    ],
+    "fact": "Host of the Jamaica Tourist Board's “There's Always More to Jamaica” campaign",
+    "why": [
+      [
+        "Makes a place the hero",
+        "Hospitality, attractions, food and anything with an address."
+      ],
+      [
+        "An audience that engages",
+        "6.3% on Instagram, 65% women."
+      ],
+      [
+        "Proven at national scale",
+        "Hosted a JTB campaign aimed at five overseas markets."
+      ]
+    ],
+    "cta": "Book Justin through the Screenshot Creator Network · talent@screenshotinteractive.com"
+  }
 }

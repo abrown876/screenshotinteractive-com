@@ -88,7 +88,8 @@ def article(s, top, foot, style, more):
     }
     hero = ''
     if s.get('photo'):
-        cap = f'<figcaption>{esc(s.get("photoCaption", ""))}</figcaption>' if s.get('photoCaption') else ''
+        cap_txt = (s.get('photoCaption', '') + (' AI illustration.' if s.get('aiImage') else '')).strip()
+        cap = f'<figcaption>{esc(cap_txt)}</figcaption>' if cap_txt else ''
         hero = f'<figure class="tbp-hero"><img src="{s["photo"]}" alt="{esc(s.get("photoCaption", s["title"]))}">{cap}</figure>'
     stat = ''
     if s.get('stat'):
@@ -161,6 +162,8 @@ def feed(stories):
         link = f'{SITE}/{SECTION}/{s["slug"]}'
         img = SITE + f'/assets/bigger-picture/cards/{s["slug"]}.jpg'
         size = (CARDS / f'{s["slug"]}.jpg').stat().st_size if (CARDS / f'{s["slug"]}.jpg').exists() else 0
+        extra = ''.join(f'    <media:content url="{SITE}/assets/bigger-picture/cards/{x.name}" medium="image" type="image/jpeg" width="1080" height="1350"/>\n'
+                        for x in sorted(CARDS.glob(f'{s["slug"]}-*.jpg')))
         pub = format_datetime(datetime.strptime(s['date'] + ' 07:00', '%Y-%m-%d %H:%M').astimezone())
         items.append(f"""  <item>
     <title>{esc(s['title'])}</title>
@@ -171,7 +174,7 @@ def feed(stories):
     <description>{esc(s['caption'])}</description>
     <enclosure url="{img}" length="{size}" type="image/jpeg"/>
     <media:content url="{img}" medium="image" type="image/jpeg" width="1080" height="1350"/>
-  </item>""")
+{extra}  </item>""")
     return f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
 <channel>
@@ -228,6 +231,7 @@ body{{color:#fff;background:#141228 url('{photo}') {c.get('focal', 'center')}/{c
 .top{{display:flex;justify-content:space-between;align-items:center}}
 .cat{{font:800 20px Archivo;letter-spacing:.18em;text-transform:uppercase;border:2px solid #fff;padding:9px 16px;border-radius:999px}}
 .bottom{{margin-top:auto}}
+.ai{{align-self:flex-end;margin-top:14px;font:600 16px Inter;letter-spacing:.06em;color:rgba(255,255,255,.8);background:rgba(0,0,0,.35);padding:5px 10px;border-radius:6px}}
 .stat{{font-family:Nexa;font-size:{stat_px}px;line-height:.85;letter-spacing:-.04em}}
 .statl{{font:600 32px/1.25 Inter;margin:18px 0 26px;max-width:760px;color:rgba(255,255,255,.9)}}
 .rule{{width:120px;height:8px;background:#EB5C77;margin-bottom:26px}}
@@ -236,6 +240,7 @@ h1{{font-family:Nexa;font-size:{s['card'].get('h1', 72)}px;line-height:1.03;lett
 .foot small{{font:600 18px Inter;color:rgba(255,255,255,.72);max-width:640px}}
 </style><div class=shade></div><div class=wrap>
 <div class=top><div class=tbp>THE BIGGER <i>PICTURE</i></div><div class=cat>{esc(s['category'])}</div></div>
+{'<div class=ai>AI illustration</div>' if s.get('aiImage') else ''}
 <div class=bottom>{stat}<h1>{esc(s['card'].get('headline', s['title']))}</h1>
 <div class=foot><small>{esc(src_line(s))}</small><div class=logo>{logo_svg()}</div></div></div></div>"""
 
@@ -268,28 +273,120 @@ h2{{font-family:Nexa;font-size:56px;line-height:1.05;margin-top:36px}}
 <div class=foot><small>{esc(src_line(s))}</small><div class=logo>{logo_svg()}</div></div>"""
 
 
+SPARKLE = '<svg viewBox="0 0 40 40"><path d="M20 0c2 11 9 18 20 20-11 2-18 9-20 20-2-11-9-18-20-20C11 18 18 11 20 0z"/></svg>'
+
+
+def card_spotlight(s):
+    """Creator Spotlight: two slides. 1 = fun cover with cutout, 2 = detail."""
+    c = s['creator']
+    cut = (ROOT / c['cutout'].lstrip('/')).as_uri()
+    alias = esc(c['alias'].upper())
+    alias_px = int(min(260, 1500 / max(len(c["alias"]), 1)))
+    rot = [-6, 5, -3]
+    pos = [(60, 470), (720, 610), (70, 760)]
+    chips = ''.join(
+        f'<div class=chip style="left:{x}px;top:{y}px;transform:rotate({r}deg)"><b>{esc(v)}</b><span>{esc(l)}</span></div>'
+        for (v, l), (x, y), r in zip(c['stats'], pos, rot))
+    niches = ''.join(f'<span>{esc(n)}</span>' for n in c['niches'])
+    base = fonts_css() + """
+.spark{position:absolute;width:56px;height:56px} .spark svg{width:100%;height:100%;display:block}
+"""
+    slide1 = f"""<style>{base}
+body{{background:#EB5C77;color:#fff;position:relative;overflow:hidden}}
+.dots{{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.22) 3px,transparent 3.5px);background-size:34px 34px;-webkit-mask-image:linear-gradient(160deg,#000 0%,transparent 55%)}}
+.alias{{position:absolute;left:0;right:0;top:170px;text-align:center;font-family:Nexa;font-size:{alias_px}px;line-height:.9;letter-spacing:-.03em;color:transparent;-webkit-text-stroke:5px #fff;opacity:.95}}
+.alias2{{position:absolute;left:0;right:0;top:{170 + int(alias_px * .92)}px;text-align:center;font-family:Nexa;font-size:{alias_px}px;line-height:.9;letter-spacing:-.03em;color:#595496}}
+.cut{{position:absolute;left:50%;bottom:250px;height:930px;transform:translateX(-46%)}}
+.top{{position:absolute;top:56px;left:64px;right:64px;display:flex;justify-content:space-between;align-items:center;z-index:5}}
+.sticker{{background:#FFE14D;color:#1A1A1A;font:800 24px Archivo;letter-spacing:.12em;text-transform:uppercase;padding:14px 22px;border-radius:14px;transform:rotate(4deg);box-shadow:6px 6px 0 #1A1A1A}}
+.chip{{position:absolute;z-index:6;background:#fff;color:#1A1A1A;border-radius:22px;padding:16px 24px 14px;box-shadow:8px 8px 0 #595496;display:flex;flex-direction:column;align-items:flex-start}}
+.chip b{{font-family:Nexa;font-size:64px;line-height:1;color:#595496;letter-spacing:-.02em}}
+.chip span{{font:800 19px Archivo;letter-spacing:.14em;text-transform:uppercase;color:#EB5C77;margin-top:4px}}
+.band{{position:absolute;left:0;right:0;bottom:0;height:270px;background:#595496;padding:34px 64px 0;z-index:7}}
+.band h1{{font-family:Nexa;font-size:58px;line-height:1.02;letter-spacing:-.02em;max-width:720px}}
+.meta{{display:flex;gap:14px;align-items:center;margin-top:18px}}
+.handle{{font:800 26px Archivo;background:#fff;color:#595496;padding:8px 16px;border-radius:999px}}
+.niches span{{font:700 20px Inter;color:rgba(255,255,255,.85);margin-right:14px}}
+.niches span::before{{content:'✦ ';color:#FFE14D}}
+.logo{{position:absolute;right:64px;bottom:40px;height:80px;z-index:8}}
+.s1{{left:210px;top:420px;fill:#FFE14D}} .s2{{right:130px;top:350px;width:40px;height:40px;fill:#fff}} .s3{{right:300px;top:880px;width:34px;height:34px;fill:#FFE14D}}
+.spark svg{{fill:inherit}}
+</style>
+<div class=dots></div>
+<div class=alias>{alias}</div><div class=alias2>{alias}</div>
+<img class=cut src="{cut}">
+<div class="spark s1" style="fill:#FFE14D">{SPARKLE}</div><div class="spark s2" style="fill:#fff">{SPARKLE}</div><div class="spark s3" style="fill:#FFE14D">{SPARKLE}</div>
+<div class=top><div class=tbp>THE BIGGER <i style="color:#595496">PICTURE</i></div><div class=sticker>★ Creator Spotlight</div></div>
+{chips}
+<div class=band><h1>{esc(c['hook'])}</h1><div class=meta><span class=handle>{esc(c['handle'])}</span><span class=niches>{niches}</span></div></div>
+<div class=logo>{logo_svg()}</div>"""
+
+    why = ''.join(f'<li><b>{esc(a)}</b><span>{esc(b)}</span></li>' for a, b in c['why'])
+    stats = ''.join(f'<div><b>{esc(v)}</b><span>{esc(l)}</span></div>' for v, l in c['stats'])
+    slide2 = f"""<style>{base}
+body{{background:#595496;color:#fff;padding:64px;display:flex;flex-direction:column;position:relative;overflow:hidden}}
+.top{{display:flex;justify-content:space-between;align-items:center}}
+.pill{{font:800 22px Archivo;letter-spacing:.14em;text-transform:uppercase;background:#FFE14D;color:#1A1A1A;padding:12px 20px;border-radius:999px}}
+.who{{display:flex;align-items:center;gap:26px;margin-top:48px}}
+.av{{width:150px;height:150px;border-radius:50%;background:#EB5C77 url('{cut}') center 8%/150% auto no-repeat;border:6px solid #fff;flex:none}}
+.who h2{{font-family:Nexa;font-size:62px;line-height:1}}
+.who p{{font:800 26px Archivo;color:#FFE14D;margin-top:8px}}
+.fact{{margin-top:34px;background:rgba(255,255,255,.1);border-left:8px solid #EB5C77;border-radius:0 16px 16px 0;padding:22px 26px;font:600 30px/1.3 Inter}}
+.stats{{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}}
+.stats div{{background:#fff;color:#1A1A1A;border-radius:18px;padding:20px 22px;box-shadow:7px 7px 0 #EB5C77}}
+.stats b{{display:block;font-family:Nexa;font-size:58px;line-height:1;color:#595496}}
+.stats span{{font:800 18px Archivo;letter-spacing:.12em;text-transform:uppercase;color:#EB5C77}}
+h3{{font:800 24px Archivo;letter-spacing:.16em;text-transform:uppercase;color:#FFE14D;margin-top:44px}}
+ul{{list-style:none;margin-top:14px}}
+li{{display:flex;flex-direction:column;padding:16px 0;border-bottom:2px solid rgba(255,255,255,.18)}}
+li b{{font-family:Nexa;font-size:40px;line-height:1.1}}
+li span{{font:400 26px/1.35 Inter;color:rgba(255,255,255,.85);margin-top:4px}}
+.cta{{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;gap:30px}}
+.cta p{{font:700 24px/1.35 Inter;max-width:640px}}
+.logo{{height:80px;flex:none}}
+.spark{{position:absolute;right:70px;top:190px;width:60px;height:60px;fill:#FFE14D}}
+</style>
+<div class=spark>{SPARKLE}</div>
+<div class=top><div class=tbp>THE BIGGER <i>PICTURE</i></div><div class=pill>★ Creator Spotlight</div></div>
+<div class=who><div class=av></div><div><h2>{esc(c['name'])}</h2><p>{esc(c['handle'])} · {esc(' · '.join(c['niches']))}</p></div></div>
+<div class=fact>{esc(c['fact'])}</div>
+<div class=stats>{stats}</div>
+<h3>Why brands work with {esc(c['name'].split()[0])}</h3>
+<ul>{why}</ul>
+<div class=cta><p>{esc(c['cta'])}</p><div class=logo>{logo_svg()}</div></div>"""
+    return [slide1, slide2]
+
+
 def render_cards(stories):
     from playwright.sync_api import sync_playwright
     import tempfile
     CARDS.mkdir(parents=True, exist_ok=True)
+    styles = {'cover': card_cover, 'navy': card_navy, 'spotlight': card_spotlight}
     with sync_playwright() as p, tempfile.TemporaryDirectory() as tmp:
         b = p.chromium.launch()
         pg = b.new_page(viewport={'width': 1080, 'height': 1350})
         for s in stories:
-            fn = card_cover if s['card']['style'] == 'cover' else card_navy
-            h = pathlib.Path(tmp) / f'{s["slug"]}.html'
-            h.write_text('<!doctype html><meta charset=utf-8>' + fn(s))
-            pg.goto(h.as_uri())
-            pg.wait_for_timeout(300)
-            pg.screenshot(path=str(CARDS / f'{s["slug"]}.jpg'), type='jpeg', quality=88)
-            print('card', s['slug'])
+            slides = styles[s['card']['style']](s)
+            if isinstance(slides, str):
+                slides = [slides]
+            for old in CARDS.glob(f'{s["slug"]}-*.jpg'):
+                old.unlink()
+            for i, html_ in enumerate(slides):
+                h = pathlib.Path(tmp) / f'{s["slug"]}-{i}.html'
+                h.write_text('<!doctype html><meta charset=utf-8>' + html_)
+                pg.goto(h.as_uri())
+                pg.wait_for_timeout(300)
+                name = f'{s["slug"]}.jpg' if i == 0 else f'{s["slug"]}-{i + 1}.jpg'
+                pg.screenshot(path=str(CARDS / name), type='jpeg', quality=88)
+            print('card', s['slug'], len(slides), 'slide(s)')
         b.close()
 
 
 def main():
     stories = load_stories()
+    only = [a.split('=', 1)[1] for a in sys.argv if a.startswith('--only=')]
     if '--no-cards' not in sys.argv:
-        render_cards(stories)
+        render_cards([s for s in stories if not only or s['slug'] in only])
     top, foot, style = chrome()
     out = ROOT / SECTION
     out.mkdir(exist_ok=True)

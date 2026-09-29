@@ -74,7 +74,22 @@ Current roster (keep in sync with `/creators`): Simon Tomlinson (TomoTV), Toni-A
 
 - **Cover card:** a library photo fills the frame, with type on a dark fade. Use it when a library photo genuinely fits the story.
 - **Bold Navy card:** text only. Use it for stat-led stories or when no photo fits.
+- **Creator Spotlight carousel (two slides):**
+  - Slide 1: the creator cut out on brand pink, their name in huge type behind them, stat stickers, the hook line and their handle.
+  - Slide 2: detail. Headline fact, stats, three "why brands work with them" points, and how to book.
+  - The creator block in the story file drives both slides.
 - Headline on the card: 60 characters or fewer where possible.
+
+### AI imagery
+
+Use AI-generated images when no library photo matches the headline. Rules:
+
+- **Illustrations only.** Never present an AI image as a photo of a real event, place on a specific date, person or product.
+- **No real people, no real brands.** No logos, no signage, no recognisable faces, no brand packaging.
+- **Always labelled.** Set `"aiImage": true` in the story file. The card and the article caption then say "AI illustration".
+- **Match the headline's idea, not the news event.** For example, "a sponsor lounge at a night festival", not "Dream Weekend 2026".
+- **Our own photos win.** When a real Screenshot photo fits, use it.
+- Save generated images in `assets/bigger-picture/library/ai/` and add them to `library.json` with `"ai": true`.
 
 ## 9. Story file
 

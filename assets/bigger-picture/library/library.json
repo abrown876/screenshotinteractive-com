@@ -106,6 +106,20 @@
       "source": "Supplied by Andrew Brown",
       "approved": true,
       "clientBranded": false
+    },
+    {
+      "file": "/assets/bigger-picture/library/creators/justin-whitelocke-cutout.png",
+      "category": "creators",
+      "creator": "Justin Whitelocke",
+      "description": "Justin Whitelocke cutout (transparent background) for Creator Spotlight cards",
+      "focal": "center",
+      "size": [
+        876,
+        1500
+      ],
+      "source": "Background removed from supplied portrait",
+      "approved": true,
+      "clientBranded": false
     }
   ],
   "usage": []
