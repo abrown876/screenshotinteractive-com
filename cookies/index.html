@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sweet Selfie: Photo Cookies in Jamaica | Screenshot Interactive</title>
-<meta name="description" content="Sweet Selfie prints your photo on a fresh round cookie. Upload a photo, see how it looks, then order a box of 2 large or a box of 3 on WhatsApp. Kingston, Jamaica.">
+<meta name="description" content="Sweet Selfie prints your photo on a fresh round cookie. Upload a photo, see it on the cookie, then order a box of 2 large or a box of 3 on WhatsApp. Kingston, Jamaica.">
 <link rel="canonical" href="https://screenshotinteractive.com/cookies">
 <link rel="icon" href="/assets/favicon.svg?v=brand22" type="image/svg+xml">
 <meta property="og:title" content="Sweet Selfie: Photo Cookies in Jamaica | Screenshot Interactive">
-<meta property="og:description" content="Sweet Selfie prints your photo on a fresh round cookie. Upload a photo, see how it looks, then order a box of 2 large or a box of 3 on WhatsApp. Kingston, Jamaica.">
+<meta property="og:description" content="Sweet Selfie prints your photo on a fresh round cookie. Upload a photo, see it on the cookie, then order a box of 2 large or a box of 3 on WhatsApp. Kingston, Jamaica.">
 <meta property="og:image" content="https://screenshotinteractive.com/cookies/sweet-selfie-og.jpg">
 <meta property="og:url" content="https://screenshotinteractive.com/cookies">
 <meta property="og:type" content="website">
@@ -17,6 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/styles.css?v=brand30">
 </head>
 <body>
@@ -47,166 +48,185 @@
   </div>
 </header>
 <style>
-/* Sweet Selfie brand, scoped to this page: pink #F23C5D and yellow #FFDF79 from the 2021 logo kit. */
-.ss{--red:#F23C5D;--navy:#8A1F3A;--offwhite:#FFF6E6;--ss-yellow:#FFDF79;--ss-pink:#F23C5D}
-.ss .btn-primary{background:#DC2D4F}.ss .btn-primary:hover{background:#B91F3E}
-.ss-hero{background:var(--ss-pink);color:#fff;overflow:hidden;position:relative}
-.ss-hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:var(--ss-yellow);opacity:.22}
-.ss-hero .container{display:grid;grid-template-columns:auto minmax(0,1fr);gap:40px;align-items:center;padding-top:44px;padding-bottom:44px;position:relative;z-index:1}
-.ss-hero img{width:170px;height:auto;display:block}
-.ss-hero h1{color:#fff;margin:0 0 14px;font-size:clamp(34px,5vw,58px);line-height:1.02}
-.ss-hero h1 mark{background:none;color:var(--ss-yellow)}
-.ss-hero p{font-size:19px;line-height:1.5;color:rgba(255,255,255,.94);max-width:56ch;margin:0}
-.ss-hero .by{font:700 12px/1 Archivo,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--ss-yellow);margin-bottom:12px;display:block}
-@media (max-width:700px){.ss-hero .container{grid-template-columns:1fr;gap:20px;text-align:left}.ss-hero img{width:120px}}
-.ck-date{font:500 16px/1.2 Inter,sans-serif;padding:11px 12px;border:1.5px solid var(--line);border-radius:12px;width:100%;max-width:260px;color:var(--char);background:#fff}
-.ck-warn{font-size:14px;color:#9a3412;background:#fff4e5;border-radius:10px;padding:8px 12px;margin-top:10px}
-.ss-info{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:36px}
-@media (max-width:860px){.ss-info{grid-template-columns:1fr}}
-.ss-card{background:#fff;border:1.5px solid #f6d3da;border-radius:18px;padding:20px}
-.ss-card h3{font-size:20px;color:var(--navy);margin:0 0 8px}
-.ss-card p{font-size:15px;color:#444;margin:0 0 8px}
-.ss-card details summary{cursor:pointer;font-weight:600;color:var(--red);font-size:15px}
-.ss-card details p{font-size:13px;color:var(--gray);margin-top:8px}
-.ss-ig{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--red);text-decoration:none}
-/* Photo cookies preview. Uses the site's tokens (navy, red, offwhite, Archivo/Inter). Cookie on the left, choices on the right, the box underneath. */
-.ck-wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:32px;align-items:start}
-@media (max-width:860px){.ck-wrap{grid-template-columns:1fr}}
-.ck-stage{position:relative;background:var(--offwhite);border-radius:20px;padding:18px}
-.ck-stage canvas{width:100%;aspect-ratio:1/1;display:block;touch-action:none;cursor:grab}
-.ck-stage canvas.dragging{cursor:grabbing}
-.ck-stage canvas:focus-visible{outline:3px solid var(--navy);outline-offset:4px;border-radius:12px}
-.ck-tag{position:absolute;top:28px;left:28px;font:700 11px/1 Archivo,sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:7px 10px;border-radius:999px;background:var(--navy);color:var(--white)}
-.ck-hint{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 14px;font-size:13px;color:var(--gray);padding:4px 6px 0}
-.ck-panel{display:grid;gap:22px}
-.ck-drop{border:2px dashed #d8d6e6;border-radius:18px;padding:24px 18px;text-align:center;transition:border-color .15s,background .15s}
-.ck-drop.over{border-color:var(--red);background:#fff5f7}
-.ck-drop h3{font-size:22px;margin-bottom:6px}
-.ck-drop p{font-size:15px;color:var(--gray);margin-bottom:14px}
-.ck-label{font:700 12px/1 Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:10px;display:block}
-.ck-seg{display:flex;flex-wrap:wrap;gap:8px}
-.ck-seg button{font:600 15px/1.2 Inter,sans-serif;padding:12px 16px;border-radius:14px;border:1.5px solid var(--line);background:var(--white);color:var(--char);cursor:pointer;text-align:left}
-.ck-seg button small{display:block;font-weight:500;font-size:13px;color:var(--gray);margin-top:2px}
-.ck-seg button[aria-pressed="true"]{border-color:var(--navy);background:var(--navy);color:var(--white)}
-.ck-seg button[aria-pressed="true"] small{color:rgba(255,255,255,.75)}
-.ck-row{display:flex;align-items:center;gap:12px}
-.ck-row input[type=range]{flex:1;min-width:0;accent-color:var(--red)}
-.ck-row output{font-variant-numeric:tabular-nums;min-width:4ch;text-align:right;color:var(--gray);font-size:14px}
-.ck-check{display:flex;align-items:center;gap:10px;font-size:15px;cursor:pointer;margin-bottom:8px}
-.ck-check input{width:18px;height:18px;accent-color:var(--red)}
-.ck-panel .btn:focus-visible,.ck-seg button:focus-visible,.ck-panel input:focus-visible{outline:3px solid var(--navy);outline-offset:2px}
-.ck-tips{font-size:15px;color:var(--gray);border-top:1px solid var(--line);padding-top:16px}
-.ck-tips b{color:var(--char)}
-.ck-box{background:var(--offwhite);border-radius:20px;padding:22px;margin-top:32px}
-.ck-box-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 20px;margin-bottom:14px}
-.ck-box h2{font-size:clamp(24px,3vw,34px);margin:0}
-.ck-box canvas{width:100%;aspect-ratio:2/1;display:block;border-radius:14px}
-.ck-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:28px}
-@media (max-width:760px){.ck-steps{grid-template-columns:1fr}}
-.ck-step{border-top:3px solid var(--red);padding-top:14px}
-.ck-step .n{font:800 14px/1 Archivo,sans-serif;color:var(--red);letter-spacing:.1em}
-.ck-step h4{margin:8px 0 6px;color:var(--navy)}
-.ck-step p{font-size:15px;color:#444}
+/* Sweet Selfie, scoped to this page. Brand: pink #F23C5D, yellow #FFDF79 (2021 logo kit), berry #3D0D1B for text on pink. Fredoka stands in for the logo lettering. */
+.ss{--red:#F23C5D;--navy:#3D0D1B;--offwhite:#FFF6E6;--ss-pink:#F23C5D;--ss-yellow:#FFDF79;--ss-berry:#3D0D1B;--ss-deep:#C81E44;--ss-ink:#4A2A31;--ss-muted:#6B4A52;background:#FFF6E6;color:#2A1016;overflow:hidden}
+.ss h1,.ss h2,.ss h3,.ss .ss-display{font-family:Fredoka,Archivo,sans-serif;font-weight:700}
+.ss-wrap{max-width:1200px;margin:0 auto;padding-left:24px;padding-right:24px}
+.ss-btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 30px;border-radius:999px;font:700 18px/1 Inter,sans-serif;text-decoration:none;cursor:pointer;border:0;transition:transform .12s}
+.ss-btn:active{transform:translateY(3px)}
+.ss-btn:focus-visible,.ss button:focus-visible,.ss input:focus-visible,.ss a:focus-visible,.ss canvas:focus-visible{outline:3px solid var(--ss-berry);outline-offset:3px}
+.ss-btn-dark{background:var(--ss-berry);color:#fff;box-shadow:0 7px 0 #1F060D}
+.ss-btn-red{background:var(--ss-deep);color:#fff;box-shadow:0 7px 0 #8A1F3A}
+.ss-btn-yellow{background:var(--ss-yellow);color:var(--ss-berry)}
+
+/* hero = the tool */
+.ss-hero{background:var(--ss-pink)}
+.ss-hero .ss-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:36px;padding-top:44px;padding-bottom:64px}
+.ss-copy{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:20px}
+.ss-copy img.logo{width:104px;height:auto}
+.ss-copy h1{margin:0;color:#fff;font-size:clamp(46px,7vw,94px);line-height:.95;letter-spacing:-.01em}
+.ss-copy h1 span{display:inline-block;background:var(--ss-yellow);color:var(--ss-berry);padding:0 14px;border-radius:18px;transform:rotate(-2deg)}
+.ss-copy p{margin:0;font-size:20px;line-height:1.5;color:var(--ss-berry);max-width:40ch}
+.ss-upload{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center}
+.ss-upload span{font-size:15px;font-weight:600;color:var(--ss-berry)}
+.ss-warn{font-size:14px;color:#7a2e00;background:#FFF1D6;border-radius:12px;padding:9px 13px;max-width:44ch}
+.ss-chips{display:flex;flex-wrap:wrap;gap:8px}
+.ss-chips button{min-height:44px;padding:0 18px;border-radius:999px;border:2px solid #fff;background:transparent;color:#fff;font:700 15px/1 Inter,sans-serif;cursor:pointer}
+.ss-chips button[aria-pressed="true"]{background:var(--ss-yellow);border-color:var(--ss-berry);color:var(--ss-berry)}
+.ss-chips-label{font:700 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ss-berry)}
+
+.ss-stagecol{flex:1 1 460px;min-width:0;display:flex;flex-direction:column;align-items:center;gap:16px}
+.ss-stage{position:relative;width:min(100%,540px);aspect-ratio:1;border-radius:50%;background:var(--offwhite)}
+.ss-stage canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab;border-radius:50%}
+.ss-stage canvas.dragging{cursor:grabbing}
+.ss-sticker{position:absolute;top:5%;right:-1%;transform:rotate(10deg);background:#fff;color:var(--ss-berry);font:700 17px/1.1 Fredoka,sans-serif;padding:12px 16px;border-radius:16px;box-shadow:0 10px 24px -12px rgba(0,0,0,.4);pointer-events:none}
+.ss-pill{position:absolute;bottom:3%;left:50%;transform:translateX(-50%);background:var(--ss-berry);color:#fff;font:600 14px/1 Inter,sans-serif;padding:10px 14px;border-radius:999px;white-space:nowrap;pointer-events:none}
+.ss-tools{width:min(100%,540px);box-sizing:border-box;background:var(--offwhite);border-radius:20px;padding:14px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;font-size:14px;color:var(--ss-ink)}
+.ss-tools .zoom{display:flex;align-items:center;gap:10px;flex:1 1 200px;min-width:0}
+.ss-tools input[type=range]{flex:1;min-width:0;accent-color:var(--ss-deep)}
+.ss-tools label.chk{display:flex;align-items:center;gap:8px;cursor:pointer}
+.ss-tools input[type=checkbox]{width:18px;height:18px;accent-color:var(--ss-deep)}
+.ss-tools button{background:none;border:0;font:700 14px Inter,sans-serif;color:#B3183D;cursor:pointer;padding:8px 0;min-height:44px}
+
+.ss-strip{background:var(--ss-berry);color:var(--ss-yellow);font:700 22px/1 Fredoka,sans-serif;padding:18px 0;white-space:nowrap;overflow:hidden}
+.ss-strip div{display:inline-block;padding-left:100%;animation:ssScroll 38s linear infinite}
+@keyframes ssScroll{to{transform:translateX(-100%)}}
+@media (prefers-reduced-motion:reduce){.ss-strip div{animation:none;padding-left:24px}}
+
+.ss-boxes{padding-top:72px;padding-bottom:24px}
+.ss-boxes h2{margin:0 0 28px;font-size:clamp(34px,4vw,52px);line-height:1.05;color:var(--ss-berry)}
+.ss-boxgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.ss-boxcard{text-align:left;border:3px solid #E2D4C2;border-radius:28px;background:#fff;padding:22px;display:flex;flex-direction:column;gap:14px;font:inherit;color:inherit;cursor:pointer;transition:box-shadow .15s,border-color .15s}
+.ss-boxcard[aria-pressed="true"]{border-color:var(--ss-berry);box-shadow:8px 8px 0 var(--ss-pink)}
+.ss-boxcard canvas{width:100%;aspect-ratio:2/1;display:block;border-radius:18px;background:#FDE1E7}
+.ss-boxcard b{font:700 30px/1 Fredoka,sans-serif;color:var(--ss-berry)}
+.ss-boxcard span{font-size:16px;color:var(--ss-ink)}
+.ss-order{margin-top:32px;background:#fff;border-radius:28px;border:3px solid var(--ss-berry);padding:26px;display:flex;flex-wrap:wrap;align-items:flex-end;gap:20px 28px}
+.ss-order .when{flex:1 1 240px;display:flex;flex-direction:column;gap:10px}
+.ss-order label{font:700 22px/1.1 Fredoka,sans-serif;color:var(--ss-berry)}
+.ss-order input[type=date]{min-height:52px;padding:0 16px;border:2px solid #E2D4C2;border-radius:16px;font:500 17px Inter,sans-serif;color:#2A1016;background:var(--offwhite);max-width:300px}
+.ss-order small{font-size:14px;color:var(--ss-muted)}
+
+.ss-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;padding-top:56px;padding-bottom:56px}
+.ss-step{display:flex;flex-direction:column;gap:12px}
+.ss-step i{width:72px;height:72px;border-radius:50%;background:var(--ss-yellow);border:3px solid var(--ss-berry);display:flex;align-items:center;justify-content:center;font:700 34px/1 Fredoka,sans-serif;font-style:normal;color:var(--ss-berry)}
+.ss-step h3{margin:0;font-size:24px;line-height:1.15;color:var(--ss-berry)}
+.ss-step p{margin:0;font-size:16px;line-height:1.55;color:var(--ss-ink)}
+
+.ss-events{background:var(--ss-berry)}
+.ss-events .ss-wrap{padding-top:64px;padding-bottom:64px;display:flex;flex-wrap:wrap;align-items:center;gap:28px 48px}
+.ss-events div.t{flex:999 1 520px;min-width:0;display:flex;flex-direction:column;gap:14px}
+.ss-events em{font:700 13px/1 Inter,sans-serif;font-style:normal;letter-spacing:.16em;text-transform:uppercase;color:var(--ss-yellow)}
+.ss-events h2{margin:0;font-size:clamp(34px,4.5vw,56px);line-height:1.02;color:#fff}
+.ss-events p{margin:0;font-size:18px;line-height:1.55;color:#F6D3DA;max-width:52ch}
+
+.ss-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;padding-top:56px;padding-bottom:72px}
+.ss-card{background:#fff;border-radius:24px;padding:26px;border:2px solid #F6D3DA}
+.ss-card h3{margin:0 0 8px;font-size:22px;line-height:1.2;color:var(--ss-berry)}
+.ss-card p{margin:0 0 10px;font-size:15px;line-height:1.55;color:var(--ss-ink)}
+.ss-card summary{cursor:pointer;font-weight:700;color:#B3183D;min-height:44px;display:flex;align-items:center}
+.ss-card details p{font-size:13px;color:var(--ss-muted)}
+.ss-card.ig{background:var(--ss-yellow);border-color:var(--ss-yellow);display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.ss-card.ig img{width:64px;height:auto}
+.ss-card a{font-weight:700;color:var(--ss-berry)}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 </style>
 
 <main class="ss">
   <section class="ss-hero">
-    <div class="container">
-      <img src="/cookies/sweet-selfie-logo-light.png" width="330" height="480" alt="Sweet Selfie">
-      <div>
-        <span class="by">Sweet Selfie · by Screenshot Interactive</span>
-        <h1>We take your photos and print them on <mark>delicious cookies.</mark></h1>
-        <p>Your photo or logo, printed in edible ink on a fresh round sugar cookie. Birthdays, Mother's Day, weddings, brand launches and staff gifts. Upload a photo below and see yours before you order.</p>
+    <div class="ss-wrap">
+      <div class="ss-copy">
+        <img class="logo" src="/cookies/sweet-selfie-logo-light.png" width="330" height="480" alt="Sweet Selfie">
+        <h1>Put your <span>face</span> on a cookie.</h1>
+        <p>Drop in a photo. See it on the cookie right now. Order on WhatsApp in a tap.</p>
+        <div class="ss-upload">
+          <label class="ss-btn ss-btn-dark" for="ckFile">Choose your photo</label>
+          <input id="ckFile" type="file" accept="image/*" class="sr-only">
+          <span id="ckDropMsg">or drag it onto the cookie</span>
+        </div>
+        <div class="ss-warn" id="ckWarn" hidden>This photo is quite small, so it may print a little soft. A bigger or sharper version will look better.</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <span class="ss-chips-label" id="ckOccLabel">Add a design</span>
+          <div class="ss-chips" id="ckOcc" role="group" aria-labelledby="ckOccLabel">
+            <button type="button" data-occ="birthday" aria-pressed="false">Birthday</button>
+            <button type="button" data-occ="mothers" aria-pressed="false">Mother's Day</button>
+            <button type="button" data-occ="wedding" aria-pressed="false">Wedding</button>
+            <button type="button" data-occ="logo" aria-pressed="false">Your logo</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="ss-stagecol">
+        <div class="ss-stage" id="ckDrop">
+          <canvas id="ckCookie" width="1000" height="1000" tabindex="0" aria-label="Preview of your photo printed on a round cookie. Drag or use the arrow keys to move the photo."></canvas>
+          <span class="ss-sticker" id="ckExample">This could<br>be you</span>
+          <span class="ss-pill">Drag to move · pinch to zoom</span>
+        </div>
+        <div class="ss-tools">
+          <div class="zoom"><label for="ckZoom">Zoom</label><input id="ckZoom" type="range" min="100" max="300" value="100"><output id="ckZoomOut" for="ckZoom">100%</output></div>
+          <button type="button" id="ckReset">Recentre</button>
+          <label class="chk"><input id="ckSafe" type="checkbox"> Print-safe guide</label>
+          <label class="chk"><input id="ckInk" type="checkbox" checked> Edible ink look</label>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section" style="padding-top:28px">
-    <div class="container">
-      <div class="ck-wrap">
-        <div class="ck-stage">
-          <span class="ck-tag" id="ckExample">Example photo</span>
-          <canvas id="ckCookie" width="1000" height="1000" tabindex="0" aria-label="Preview of your photo printed on a round cookie. Drag or use the arrow keys to move the photo."></canvas>
-          <div class="ck-hint"><span>Drag to move · scroll or pinch to zoom</span><span id="ckNote">Large round cookie · box of 2</span></div>
-        </div>
+  <div class="ss-strip" aria-hidden="true"><div>Birthdays&#160;&#160;✦&#160;&#160;Mother's Day&#160;&#160;✦&#160;&#160;Weddings&#160;&#160;✦&#160;&#160;Brand launches&#160;&#160;✦&#160;&#160;Staff gifts&#160;&#160;✦&#160;&#160;Baby showers&#160;&#160;✦&#160;&#160;Graduations&#160;&#160;✦&#160;&#160;Just because</div></div>
 
-        <div class="ck-panel">
-          <div class="ck-drop" id="ckDrop">
-            <h3>Your photo</h3>
-            <p id="ckDropMsg">A photo from your phone or computer. Drop it here or choose one.</p>
-            <label class="btn btn-primary" for="ckFile">Choose photo</label>
-            <input id="ckFile" type="file" accept="image/*" class="sr-only">
-            <div class="ck-warn" id="ckWarn" hidden>This photo is quite small, so it may print a little soft. A bigger or sharper version will look better.</div>
-          </div>
+  <section class="ss-wrap ss-boxes">
+    <h2 id="ckBoxLabel">Pick your box.</h2>
+    <div class="ss-boxgrid" id="ckBoxes" role="group" aria-labelledby="ckBoxLabel">
+      <button type="button" class="ss-boxcard" data-box="two" aria-pressed="true">
+        <canvas id="ckTray2" width="1600" height="800" aria-hidden="true"></canvas>
+        <b>Box of 2</b><span>Two large cookies. The showpiece gift.</span>
+      </button>
+      <button type="button" class="ss-boxcard" data-box="three" aria-pressed="false">
+        <canvas id="ckTray3" width="1600" height="800" aria-hidden="true"></canvas>
+        <b>Box of 3</b><span>Three regular cookies. One to keep, two to share.</span>
+      </button>
+    </div>
 
-          <div>
-            <span class="ck-label" id="ckBoxLabel">Your box</span>
-            <div class="ck-seg" id="ckBoxes" role="group" aria-labelledby="ckBoxLabel">
-              <button type="button" data-box="two" aria-pressed="true">Box of 2<small>Large cookies</small></button>
-              <button type="button" data-box="three" aria-pressed="false">Box of 3<small>Regular cookies</small></button>
-            </div>
-          </div>
-
-          <div>
-            <label class="ck-label" for="ckZoom">Zoom</label>
-            <div class="ck-row"><input id="ckZoom" type="range" min="100" max="300" value="100"><output id="ckZoomOut" for="ckZoom">100%</output></div>
-          </div>
-
-          <div>
-            <span class="ck-label">Preview</span>
-            <label class="ck-check"><input id="ckInk" type="checkbox" checked> Edible ink look (softer, slightly muted colour)</label>
-            <label class="ck-check"><input id="ckSafe" type="checkbox"> Show where text and faces print best</label>
-            <button type="button" class="btn btn-ghost" id="ckReset" style="margin-top:6px">Recentre photo</button>
-          </div>
-
-          <div>
-            <label class="ck-label" for="ckDate">When do you need them?</label>
-            <input class="ck-date" id="ckDate" type="date">
-            <p style="font-size:14px;color:var(--gray);margin:8px 0 0">Order at least 3 days ahead.</p>
-          </div>
-
-          <div style="display:flex;flex-wrap:wrap;gap:12px">
-            <a class="btn btn-primary btn-lg" id="ckOrder" href="https://wa.me/18763558685" target="_blank" rel="noopener">Order on WhatsApp →</a>
-            <a class="btn btn-ghost btn-lg" href="/contact">Bulk or corporate order</a>
-          </div>
-
-          <p class="ck-tips"><b>For the best print:</b> use a bright, sharp photo with the face or logo near the middle, and keep any text inside the guide. The outer few millimetres sit on the cookie's baked edge. Send us your photo on WhatsApp when you order.</p>
-        </div>
+    <div class="ss-order">
+      <div class="when">
+        <label for="ckDate">When's the big day?</label>
+        <input id="ckDate" type="date">
+        <small>We need 3 days to bake, print and pack.</small>
       </div>
+      <a class="ss-btn ss-btn-red" id="ckOrder" href="https://wa.me/18763558685" target="_blank" rel="noopener">Order on WhatsApp</a>
+    </div>
+  </section>
 
-      <div class="ck-box">
-        <div class="ck-box-head"><h2 id="ckBoxTitle">In the box of 2</h2></div>
-        <canvas id="ckTray" width="1600" height="800" aria-label="Your cookies in their gift box"></canvas>
+  <section class="ss-wrap ss-steps">
+    <div class="ss-step"><i>1</i><h3>See it</h3><p>Upload, drag, zoom. What you see is what we print.</p></div>
+    <div class="ss-step"><i>2</i><h3>Send it</h3><p>Tap WhatsApp and send the same photo with your date. We confirm the price and pickup or delivery.</p></div>
+    <div class="ss-step"><i>3</i><h3>Eat it</h3><p>Fresh sugar cookies, edible ink, window gift box. Or frame it. Your call.</p></div>
+  </section>
+
+  <section class="ss-events">
+    <div class="ss-wrap">
+      <div class="t">
+        <em>Corporate and events</em>
+        <h2>We bring the printer to the party.</h2>
+        <p>Guests snap, we print, they eat. Logo cookies for launches, client gifts and staff treats too.</p>
       </div>
+      <a class="ss-btn ss-btn-yellow" href="/contact">Book it for your event</a>
+    </div>
+  </section>
 
-      <div class="ck-steps">
-        <div class="ck-step"><div class="n">STEP 1</div><h4>Preview it</h4><p>Upload your photo above, frame it and choose a box of 2 large cookies or a box of 3.</p></div>
-        <div class="ck-step"><div class="n">STEP 2</div><h4>Message us</h4><p>Tap Order on WhatsApp and send the same photo with your date. We'll confirm the price and pickup or delivery.</p></div>
-        <div class="ck-step"><div class="n">STEP 3</div><h4>We print and box</h4><p>Your photo is printed in edible ink on fresh cookies and packed in a window gift box.</p></div>
-      </div>
-
-      <div class="ss-info">
-        <div class="ss-card">
-          <h3>Timing</h3>
-          <p>We need 3 days from your order to bake, print and pack. Busy seasons like Mother's Day and Christmas fill up, so book early.</p>
-        </div>
-        <div class="ss-card">
-          <h3>Corporate and events</h3>
-          <p>Logo cookies for launches, client gifts and staff treats, or we bring the printer to your event and print guests' photos on the spot.</p>
-          <a class="ss-ig" href="/contact">Ask about corporate orders →</a>
-        </div>
-        <div class="ss-card">
-          <h3>Allergens</h3>
-          <p>Our cookies contain gluten and soy, and may contain traces of nuts and peanuts. Some contain eggs and dairy.</p>
-          <details><summary>Full ingredients</summary>
-            <p><b>Cookie:</b> flour (bleached wheat flour, malted barley flour, niacin, iron, thiamine mononitrate, riboflavin, folic acid), butter (cream, salt), sugar, eggs, vanilla, orange juice, baking powder, powdered egg whites, confectioners' sugar (sugar, corn starch), water, glycerin, vegetable and plant extract.</p>
-            <p><b>Edible ink:</b> water, ethanol, humectant, glycerin, artificial colouring (may contain one or more of FD&amp;C Red 40, Blue 1, Red 3, Yellow 5), emulsifier (polysorbate 80), preservative (methylparaben 0.1%).</p>
-          </details>
-        </div>
-      </div>
-
-      <p style="text-align:center;margin-top:32px"><a class="ss-ig" href="https://instagram.com/sweetselfieja" target="_blank" rel="noopener">See more on Instagram @sweetselfieja →</a></p>
+  <section class="ss-wrap ss-info">
+    <div class="ss-card">
+      <h3>Allergens</h3>
+      <p>Our cookies contain gluten and soy, and may contain traces of nuts and peanuts. Some contain eggs and dairy.</p>
+      <details><summary>Full ingredients</summary>
+        <p><b>Cookie:</b> flour (bleached wheat flour, malted barley flour, niacin, iron, thiamine mononitrate, riboflavin, folic acid), butter (cream, salt), sugar, eggs, vanilla, orange juice, baking powder, powdered egg whites, confectioners' sugar (sugar, corn starch), water, glycerin, vegetable and plant extract.</p>
+        <p><b>Edible ink:</b> water, ethanol, humectant, glycerin, artificial colouring (may contain one or more of FD&amp;C Red 40, Blue 1, Red 3, Yellow 5), emulsifier (polysorbate 80), preservative (methylparaben 0.1%).</p>
+      </details>
+    </div>
+    <div class="ss-card ig">
+      <img src="/cookies/sweet-selfie-logo.png" width="330" height="480" alt="">
+      <h3>@sweetselfieja</h3>
+      <a href="https://instagram.com/sweetselfieja" target="_blank" rel="noopener">See more on Instagram →</a>
     </div>
   </section>
 </main>
@@ -214,32 +234,40 @@
 <script>
 (() => {
   const C = document.getElementById('ckCookie'), ctx = C.getContext('2d');
-  const T = document.getElementById('ckTray'), tctx = T.getContext('2d');
-  const S = { box:'two', zoom:1, px:0, py:0, ink:true, safe:false, img:null, example:true };
+  const S = { box:'two', occ:null, zoom:1, px:0, py:0, ink:true, safe:false, img:null, example:true };
   const W = C.width, CX = W/2, CY = W/2;
   const $ = (id) => document.getElementById(id);
 
-  function examplePhoto(){
-    const c = document.createElement('canvas'); c.width = c.height = 900; const g = c.getContext('2d');
-    const sky = g.createLinearGradient(0,0,0,900); sky.addColorStop(0,'#F23C5D'); sky.addColorStop(.55,'#ff9f7a'); sky.addColorStop(1,'#ffd98a');
-    g.fillStyle = sky; g.fillRect(0,0,900,900);
-    g.fillStyle = 'rgba(255,255,255,.5)'; g.beginPath(); g.arc(450,420,190,0,Math.PI*2); g.fill();
-    g.fillStyle = '#8A1F3A'; g.beginPath(); g.moveTo(0,700); g.quadraticCurveTo(250,600,450,690); g.quadraticCurveTo(680,780,900,660); g.lineTo(900,900); g.lineTo(0,900); g.fill();
-    let s = 7; const rnd = () => (s = (s*16807)%2147483647)/2147483647;
-    const cols = ['#8A1F3A','#ffffff','#00a676','#FFDF79','#1A1A1A'];
-    for (let i=0;i<120;i++){ g.fillStyle = cols[i%cols.length]; g.save(); g.translate(rnd()*900, rnd()*620); g.rotate(rnd()*6); g.fillRect(-8,-4,16,8); g.restore(); }
-    g.fillStyle = '#1A1A1A'; g.textAlign = 'center';
-    g.font = '900 120px Archivo, sans-serif'; g.fillText('Happy', 450, 400); g.fillText('Birthday!', 450, 520);
-    const img = new Image(); img.src = c.toDataURL('image/png'); return img;
-  }
-
   function circle(g, cx, cy, r){ g.beginPath(); g.arc(cx, cy, r, 0, Math.PI*2); g.closePath(); }
   function rr(g,x,y,w,h,r){ g.beginPath(); g.moveTo(x+r,y); g.arcTo(x+w,y,x+w,y+h,r); g.arcTo(x+w,y+h,x,y+h,r); g.arcTo(x,y+h,x,y,r); g.arcTo(x,y,x+w,y,r); g.closePath(); }
+  function heart(g,x,y,s){ g.beginPath(); g.moveTo(x,y+s*.3); g.bezierCurveTo(x,y,x-s*.5,y,x-s*.5,y+s*.3); g.bezierCurveTo(x-s*.5,y+s*.6,x,y+s*.8,x,y+s); g.bezierCurveTo(x,y+s*.8,x+s*.5,y+s*.6,x+s*.5,y+s*.3); g.bezierCurveTo(x+s*.5,y,x,y,x,y+s*.3); g.fill(); }
   const tex = (seed, n, paint) => { const c=document.createElement('canvas'); c.width=c.height=W; const g=c.getContext('2d'); let s=seed; const rnd=()=>(s=(s*16807)%2147483647)/2147483647; for(let i=0;i<n;i++) paint(g,rnd); return c; };
   const crumbs = tex(11, 5200, (g,rnd) => { const a=rnd()*.22; g.fillStyle = rnd()>.5?`rgba(90,45,15,${a})`:`rgba(255,225,170,${a})`; const sz=rnd()*5+1; g.beginPath(); g.ellipse(rnd()*W,rnd()*W,sz,sz*(.5+rnd()*.5),rnd()*3,0,Math.PI*2); g.fill(); });
   const sugar = tex(23, 9000, (g,rnd) => { g.fillStyle=`rgba(255,250,240,${rnd()*.08})`; g.fillRect(rnd()*W,rnd()*W,1.6,1.6); });
 
-  /* printed straight onto a thick baked round cookie */
+  /* occasion designs, printed over the photo */
+  function banner(g, cy, Rp, text, fill, ink, size){
+    g.font = `700 ${size}px Fredoka, sans-serif`; g.textAlign='center'; g.textBaseline='middle';
+    const tw = Math.min(g.measureText(text).width + 70, Rp*1.7), y = cy + Rp*.58, h = size*1.5;
+    g.save(); g.shadowColor='rgba(0,0,0,.25)'; g.shadowBlur=14; g.shadowOffsetY=6; g.fillStyle=fill; rr(g, CX-tw/2, y-h/2, tw, h, h/2); g.fill(); g.restore();
+    g.fillStyle=ink; g.fillText(text, CX, y+2, tw-40);
+  }
+  function ringOf(g, cy, Rp, n, seed, paint){ let s=seed; const rnd=()=>(s=(s*16807)%2147483647)/2147483647;
+    for (let i=0;i<n;i++){ const a=rnd()*Math.PI*2, r=Rp*(.8+rnd()*.17); paint(CX+Math.cos(a)*r, cy+Math.sin(a)*r, rnd); } }
+  function occasion(g, cy, Rp){
+    if (S.occ==='birthday'){
+      const cols=['#F23C5D','#FFDF79','#ffffff','#3D0D1B','#00a676'];
+      ringOf(g, cy, Rp, 90, 7, (x,y,rnd)=>{ g.save(); g.translate(x,y); g.rotate(rnd()*6); g.fillStyle=cols[Math.floor(rnd()*cols.length)]; g.fillRect(-11,-5,22,10); g.restore(); });
+      banner(g, cy, Rp, 'Happy Birthday!', '#F23C5D', '#ffffff', 64);
+    } else if (S.occ==='mothers'){
+      ringOf(g, cy, Rp, 34, 5, (x,y,rnd)=>{ g.fillStyle = rnd()>.5 ? '#F23C5D' : '#ffffff'; heart(g, x, y-18, 30+rnd()*14); });
+      banner(g, cy, Rp, "Happy Mother's Day", '#3D0D1B', '#FFDF79', 54);
+    } else if (S.occ==='wedding'){
+      g.strokeStyle='#C9A24A'; g.lineWidth=7; circle(g, CX, cy, Rp*.93); g.stroke(); g.lineWidth=3; circle(g, CX, cy, Rp*.88); g.stroke();
+      banner(g, cy, Rp, 'Just Married', '#ffffff', '#9A7420', 60);
+    }
+  }
+
   function drawCookie(){
     const g = ctx; g.clearRect(0,0,W,W);
     const R = W*0.42, cy = CY - R*0.04, depth = R*0.12, Rp = R*0.92;
@@ -251,14 +279,16 @@
     top.addColorStop(0,'#d9a467'); top.addColorStop(.8,'#c48447'); top.addColorStop(1,'#9a5c27');
     g.fillStyle=top; g.fill(); g.clip(); g.drawImage(crumbs,0,0);
     g.save(); circle(g, CX, cy, Rp); g.clip();
-    g.fillStyle='#f3ece2'; g.fillRect(0,0,W,W);
+    const logo = S.occ==='logo';
+    g.fillStyle = logo ? '#ffffff' : '#f3ece2'; g.fillRect(0,0,W,W);
     const img = S.img;
     if (img && img.complete && img.naturalWidth){
-      const cover = Math.max(2*Rp/img.naturalWidth, 2*Rp/img.naturalHeight) * S.zoom;
-      const dw = img.naturalWidth*cover, dh = img.naturalHeight*cover;
+      const fit = logo ? Math.min(1.25*Rp/img.naturalWidth, 1.25*Rp/img.naturalHeight) : Math.max(2*Rp/img.naturalWidth, 2*Rp/img.naturalHeight);
+      const k = fit * S.zoom, dw = img.naturalWidth*k, dh = img.naturalHeight*k;
       g.filter = S.ink ? 'saturate(0.8) contrast(0.9) brightness(1.04) blur(0.7px)' : 'none';
       g.drawImage(img, CX - dw/2 + S.px, cy - dh/2 + S.py, dw, dh); g.filter='none';
     }
+    occasion(g, cy, Rp);
     if (S.ink){
       g.globalCompositeOperation='multiply'; g.fillStyle='rgba(250,236,214,.6)'; g.fillRect(0,0,W,W);
       g.globalAlpha=.18; g.drawImage(crumbs,0,0); g.globalAlpha=1;
@@ -276,20 +306,19 @@
     circle(g, CX, cy, R); g.lineWidth=3; g.strokeStyle='rgba(90,45,15,.5)'; g.stroke();
     if (S.safe){
       g.save(); g.setLineDash([14,10]); g.lineWidth=4; g.strokeStyle='#F23C5D'; circle(g, CX, cy, Rp*.86); g.stroke();
-      const ly = cy + Rp*.66, txt='Keep text and faces inside';
+      const ly = cy - Rp*.66, txt='Keep text and faces inside';
       g.setLineDash([]); g.font='600 26px Inter, sans-serif'; g.textAlign='center'; g.textBaseline='middle';
       const tw = g.measureText(txt).width + 32; g.fillStyle='rgba(255,255,255,.94)'; rr(g, CX-tw/2, ly-22, tw, 44, 22); g.fill();
       g.fillStyle='#C2244A'; g.fillText(txt, CX, ly); g.restore();
     }
   }
 
-  function drawBox(){
-    const tw=T.width, th=T.height, g=tctx; g.clearRect(0,0,tw,th);
-    const table = g.createLinearGradient(0,0,0,th); table.addColorStop(0,'#efeef4'); table.addColorStop(1,'#dcdbe6');
-    g.fillStyle=table; g.fillRect(0,0,tw,th);
+  function drawBox(T, kind){
+    const g=T.getContext('2d'), tw=T.width, th=T.height; g.clearRect(0,0,tw,th);
+    g.fillStyle='#FDE1E7'; g.fillRect(0,0,tw,th);
     const put = (x,y,s,rot) => { g.save(); g.translate(x,y); g.rotate(rot); g.drawImage(C,-s/2,-s/2,s,s); g.restore(); };
     const box = (x,y,w,h,lip) => {
-      g.save(); g.shadowColor='rgba(30,25,60,.28)'; g.shadowBlur=40; g.shadowOffsetY=18; g.fillStyle='#ffffff'; rr(g,x,y,w,h,14); g.fill(); g.restore();
+      g.save(); g.shadowColor='rgba(61,13,27,.28)'; g.shadowBlur=40; g.shadowOffsetY=18; g.fillStyle='#ffffff'; rr(g,x,y,w,h,14); g.fill(); g.restore();
       g.fillStyle='#f4f2f0'; rr(g,x+lip,y+lip,w-2*lip,h-2*lip,8); g.fill();
       const sh=g.createLinearGradient(0,y+lip,0,y+lip+50); sh.addColorStop(0,'rgba(0,0,0,.16)'); sh.addColorStop(1,'rgba(0,0,0,0)'); g.fillStyle=sh; g.fillRect(x+lip,y+lip,w-2*lip,50);
     };
@@ -297,21 +326,21 @@
       g.globalAlpha=.35; g.strokeStyle='#ffffff'; g.lineWidth=3; g.stroke();
       const gl=g.createLinearGradient(x,y,x+w,y+h); gl.addColorStop(0,'rgba(255,255,255,.35)'); gl.addColorStop(.3,'rgba(255,255,255,0)'); gl.addColorStop(.6,'rgba(255,255,255,.18)'); gl.addColorStop(.7,'rgba(255,255,255,0)');
       g.globalAlpha=1; g.fillStyle=gl; g.fill(); g.restore(); };
-    if (S.box==='two'){ box(230,110,1140,580,30); put(545,400,540,-.05); put(1055,400,540,.07); glass(270,150,1060,500); }
+    if (kind==='two'){ box(230,110,1140,580,30); put(545,400,540,-.05); put(1055,400,540,.07); glass(270,150,1060,500); }
     else { box(150,160,1300,480,28); put(440,400,380,-.06); put(800,400,380,.04); put(1160,400,380,-.02); glass(186,196,1228,408); }
   }
 
+  const OCC = { birthday:'the Birthday design', mothers:"the Mother's Day design", wedding:'the Wedding design', logo:'my logo' };
   function render(){
-    drawCookie(); drawBox();
+    drawCookie(); drawBox($('ckTray2'),'two'); drawBox($('ckTray3'),'three');
     $('ckExample').hidden = !S.example;
-    $('ckNote').textContent = S.box==='two' ? 'Large round cookie · box of 2' : 'Round cookie · box of 3';
-    $('ckBoxTitle').textContent = S.box==='two' ? 'In the box of 2' : 'In the box of 3';
     const d = $('ckDate').value ? new Date($('ckDate').value+'T12:00').toLocaleDateString('en-JM',{weekday:'long',day:'numeric',month:'long'}) : '';
-    const msg = `Hi Sweet Selfie! I'd like to order a box of ${S.box==='two'?'2 large photo cookies':'3 photo cookies'}${d?' for '+d:''}. I'll send my photo here.`;
+    const what = S.occ ? ` with ${OCC[S.occ]}` : '';
+    const msg = `Hi Sweet Selfie! I'd like to order a box of ${S.box==='two'?'2 large photo cookies':'3 photo cookies'}${what}${d?' for '+d:''}. I'll send my photo here.`;
     $('ckOrder').href = 'https://wa.me/18763558685?text=' + encodeURIComponent(msg);
   }
 
-  function say(t){ const p=$('ckDropMsg'); p.textContent=t; p.style.color='var(--red)'; }
+  function say(t){ const p=$('ckDropMsg'); p.textContent=t; p.style.color='#fff'; }
   function loadFile(f){
     if (!f || !f.type.startsWith('image/')) { say('That file is not a photo. Choose a JPG or PNG.'); return; }
     const img = new Image();
@@ -321,21 +350,21 @@
   }
   $('ckFile').addEventListener('change', e => loadFile(e.target.files[0]));
   const drop = $('ckDrop');
-  ['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('over');}));
-  ['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove('over');}));
-  drop.addEventListener('drop', e => loadFile(e.dataTransfer.files[0]));
-  C.addEventListener('dragover', e=>e.preventDefault());
-  C.addEventListener('drop', e => { e.preventDefault(); loadFile(e.dataTransfer.files[0]); });
+  ['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,e=>e.preventDefault()));
+  drop.addEventListener('drop', e => { e.preventDefault(); loadFile(e.dataTransfer.files[0]); });
 
+  $('ckOcc').addEventListener('click', e => { const b=e.target.closest('button[data-occ]'); if(!b) return;
+    S.occ = S.occ===b.dataset.occ ? null : b.dataset.occ; S.zoom=1; S.px=S.py=0; $('ckZoom').value=100; $('ckZoomOut').value='100%';
+    document.querySelectorAll('#ckOcc button').forEach(x=>x.setAttribute('aria-pressed', String(x.dataset.occ===S.occ))); render(); });
   $('ckBoxes').addEventListener('click', e => { const b=e.target.closest('button[data-box]'); if(!b) return; S.box=b.dataset.box;
     document.querySelectorAll('#ckBoxes button').forEach(x=>x.setAttribute('aria-pressed', String(x===b))); render(); });
   const zoomEl = $('ckZoom');
-  function setZoom(z){ S.zoom=Math.min(3,Math.max(1,z)); zoomEl.value=Math.round(S.zoom*100); $('ckZoomOut').value=zoomEl.value+'%'; }
+  function setZoom(z){ S.zoom=Math.min(3,Math.max(S.occ==='logo'?.4:1,z)); zoomEl.value=Math.round(S.zoom*100); $('ckZoomOut').value=zoomEl.value+'%'; }
   zoomEl.addEventListener('input', e => { setZoom(e.target.value/100); render(); });
   $('ckInk').addEventListener('change', e => { S.ink=e.target.checked; render(); });
   $('ckSafe').addEventListener('change', e => { S.safe=e.target.checked; render(); });
   $('ckReset').addEventListener('click', () => { S.px=S.py=0; render(); });
-  { const m=new Date(); m.setDate(m.getDate()+3); const iso=new Date(m.getTime()-m.getTimezoneOffset()*6e4).toISOString().slice(0,10); $('ckDate').min=iso; }
+  { const m=new Date(); m.setDate(m.getDate()+3); $('ckDate').min=new Date(m.getTime()-m.getTimezoneOffset()*6e4).toISOString().slice(0,10); }
   $('ckDate').addEventListener('change', render);
 
   const pts = new Map(); let pinch0=0, zoom0=1;
@@ -352,8 +381,8 @@
   C.addEventListener('wheel', e => { e.preventDefault(); setZoom(S.zoom*(e.deltaY<0?1.06:1/1.06)); render(); }, {passive:false});
   C.addEventListener('keydown', e => { const d=e.shiftKey?40:12; const m={ArrowLeft:[-d,0],ArrowRight:[d,0],ArrowUp:[0,-d],ArrowDown:[0,d]}[e.key]; if(!m) return; e.preventDefault(); S.px+=m[0]; S.py+=m[1]; render(); });
 
-  const start = () => { S.img = examplePhoto(); S.img.onload = render; render(); };
-  (document.fonts && document.fonts.load) ? document.fonts.load('900 120px Archivo').then(start, start) : start();
+  const start = () => { const img=new Image(); img.onload=render; img.src='/cookies/sweet-selfie-face.jpg'; S.img=img; render(); };
+  (document.fonts && document.fonts.load) ? document.fonts.load('700 60px Fredoka').then(start, start) : start();
 })();
 </script>
 
