@@ -59,7 +59,7 @@ body.live header.site{top:0}
 .nav-items a.play-link{color:var(--red);font-weight:700}
 body.live .nav-items a.play-link::before{content:"";width:8px;height:8px;border-radius:99px;background:var(--red);display:inline-block;margin-right:6px;animation:pulse 1.2s infinite;vertical-align:1px}
 .headerCta{display:inline-flex}
-@media(max-width:980px){.nav-items{display:none}}
+@media(max-width:1040px){.nav-items{display:none}}
 
 /* Page system */
 .page{display:none}
@@ -670,10 +670,10 @@ footer.site .brand-mark,
 }
 
 
-/* === Mobile hamburger menu (≤980px) === */
+/* === Mobile hamburger menu (≤1040px) === */
 .hamburger { display: none; background: transparent; border: none; cursor: pointer; padding: 0; width: 40px; height: 40px; align-items: center; justify-content: center; flex-direction: column; gap: 5px; flex-shrink: 0; }
 .hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
-@media (max-width: 980px) {
+@media (max-width: 1040px) {
   .hamburger { display: flex; }
   body.nav-open .hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   body.nav-open .hamburger span:nth-child(2) { opacity: 0; }
@@ -727,7 +727,7 @@ footer.site .brand-mark,
 
 /* Hide drawer "Get a quote" CTA on desktop — only visible inside mobile drawer */
 .nav-items .nav-cta { display: none; }
-@media (max-width: 980px) {
+@media (max-width: 1040px) {
   body.nav-open .nav-items .nav-cta { display: block; }
 }
 
