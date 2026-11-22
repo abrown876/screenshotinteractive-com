@@ -11,20 +11,20 @@
 <meta property="og:description" content="Tell us about your event. We reply within 1 business day. Tel: 876-355-8685.">
 <meta property="og:url" content="https://screenshotinteractive.com/contact">
 <meta property="og:type" content="website">
-<meta property="og:image" content="/assets/og-default.jpg">
+<meta property="og:image" content="https://screenshotinteractive.com/assets/creators-team.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/styles.css?v=brand28">
+<link rel="stylesheet" href="/assets/styles.css?v=brand29">
 </head>
 <body>
 
 <div id="liveBanner">
   <span class="live-dot"></span>
-  <span id="liveBannerText">COMING SOON — Screen Test at Chilitos this summer</span>
+  <span id="liveBannerText">Christmas parties and staff events: December dates are filling</span>
   <span>·</span>
-  <a href="/play">Join now →</a>
+  <a id="liveBannerLink" href="/contact">Check your date →</a>
 </div>
 <header class="site">
   <div class="nav">
@@ -93,19 +93,81 @@
           <option>Other</option>
         </select>
       </div>
-      <div>
-        <label for="eventDate">Event date (if known)</label>
-        <input id="eventDate" name="eventDate" type="date">
+      <div class="contact-grid">
+        <div>
+          <label for="eventDate">Event date (if known)</label>
+          <input id="eventDate" name="eventDate" type="date">
+        </div>
+        <div>
+          <label for="guests">Expected guests</label>
+          <input id="guests" name="guests" type="number" min="1" inputmode="numeric" placeholder="e.g. 150">
+        </div>
+      </div>
+      <div class="contact-grid">
+        <div>
+          <label for="venue">Venue</label>
+          <input id="venue" name="venue" type="text" placeholder="e.g. Jamaica Pegasus">
+        </div>
+        <div>
+          <label for="parish">Parish</label>
+          <select id="parish" name="parish">
+            <option value="">Select…</option>
+            <option>Kingston</option>
+            <option>St Andrew</option>
+            <option>St Catherine</option>
+            <option>St Thomas</option>
+            <option>Clarendon</option>
+            <option>Manchester</option>
+            <option>St Ann</option>
+            <option>St Mary</option>
+            <option>St Elizabeth</option>
+            <option>Trelawny</option>
+            <option>St James</option>
+            <option>Hanover</option>
+            <option>Westmoreland</option>
+            <option>Portland</option>
+            <option>Outside Jamaica</option>
+          </select>
+        </div>
+      </div>
+      <div class="contact-grid">
+        <div>
+          <label for="hours">Hours needed</label>
+          <select id="hours" name="hours">
+            <option value="">Select…</option>
+            <option>2 hours</option>
+            <option>3 hours</option>
+            <option>4 hours</option>
+            <option>5 hours</option>
+            <option>6 hours or more</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div>
+          <label for="output">Photo booth output</label>
+          <select id="output" name="output">
+            <option value="">Select…</option>
+            <option>Prints</option>
+            <option>Email</option>
+            <option>Prints and email</option>
+            <option>Not sure yet</option>
+            <option>Not a photo booth</option>
+          </select>
+        </div>
       </div>
       <div>
         <label>Services interested in</label>
         <div class="checkbox-group">
           <label class="checkbox"><input type="checkbox" name="services[]" value="Magic Mirror"> Magic Mirror</label>
+          <label class="checkbox"><input type="checkbox" name="services[]" value="Mobile Magic Mirror"> Mobile Magic Mirror</label>
+          <label class="checkbox"><input type="checkbox" name="services[]" value="360 Video Booth"> 360 Video Booth</label>
           <label class="checkbox"><input type="checkbox" name="services[]" value="AR Video"> AR Video</label>
           <label class="checkbox"><input type="checkbox" name="services[]" value="Outdoor Cinema"> Outdoor Cinema</label>
           <label class="checkbox"><input type="checkbox" name="services[]" value="Digital Advertising"> Digital Advertising</label>
           <label class="checkbox"><input type="checkbox" name="services[]" value="Creator campaign"> Creator campaign</label>
           <label class="checkbox"><input type="checkbox" name="services[]" value="Screen Test"> Screen Test</label>
+          <label class="checkbox"><input type="checkbox" name="services[]" value="Branded Trivia"> Branded Trivia</label>
+          <label class="checkbox"><input type="checkbox" name="services[]" value="Table Tabs"> Table Tabs</label>
           <label class="checkbox"><input type="checkbox" name="services[]" value="Social Cine'"> Social Cine'</label>
           <label class="checkbox"><input type="checkbox" name="services[]" value="Tents & Power"> Tents &amp; Power</label>
           <label class="checkbox"><input type="checkbox" name="services[]" value="Sound"> Sound</label>
@@ -122,6 +184,7 @@
     <aside>
       <h3 style="margin-bottom:12px">Reach us directly</h3>
       <p style="margin-bottom:8px"><strong>Phone:</strong> <a href="tel:8763558685">876-355-8685</a></p>
+      <p style="margin-bottom:8px"><strong>WhatsApp:</strong> <a href="https://wa.me/18763558685?text=Hi%20Screenshot%2C%20I%27d%20like%20a%20quote%20for%20an%20event." target="_blank" rel="noopener">Message us on WhatsApp</a></p>
       <p style="margin-bottom:8px"><strong>Email:</strong> <a href="mailto:info@screenshotinteractive.com">info@screenshotinteractive.com</a></p>
       <p style="margin-bottom:24px"><strong>Instagram:</strong> <a href="https://www.instagram.com/screenshotja" target="_blank" rel="noopener">@screenshotja</a></p>
       <h4 style="margin-bottom:8px">Service area</h4>
@@ -159,11 +222,6 @@
         <a href="https://www.facebook.com/screenshotinteractive" target="_blank" rel="noopener">Facebook</a>
         <a href="https://www.instagram.com/screenshotja" target="_blank" rel="noopener">Instagram @screenshotja</a>
       </div>
-      <div>
-        <h5>Legal</h5>
-        <a href="/terms">Terms &amp; conditions</a>
-        <a href="/privacy">Privacy policy</a>
-      </div>
     </div>
     <div class="bottom">
       <div>©2026 Screenshot Interactive Ltd. · Kingston, Jamaica</div>
@@ -172,7 +230,14 @@
   </div>
 </footer>
 <button id="stickyPlay" class="btn btn-primary btn-lg" onclick="location.href='/play'">▶  Join now</button>
-<script src="/assets/main.js?v=brand22" defer></script>
+<script src="/assets/main.js?v=brand29" defer></script>
+<script>
+(function(){
+  var q=new URLSearchParams(location.search);
+  var t=q.get('type'); if(t){var sel=document.getElementById('eventType');for(var i=0;i<sel.options.length;i++){if(sel.options[i].text===t){sel.selectedIndex=i;break;}}}
+  var sv=q.get('service'); if(sv){document.querySelectorAll('input[name="services[]"]').forEach(function(c){if(c.value===sv)c.checked=true;});}
+})();
+</script>
 <script>
 (function(){
   var form = document.getElementById('contactForm');

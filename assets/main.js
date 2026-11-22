@@ -58,6 +58,26 @@
       t2.textContent = '🎬 TICKETS ON SALE — ' + nextOnSale.editionName + ' · ' + dateLabel + ' · ' + (nextOnSale.venue || 'Devon House');
     }
     // Header CTA stays as default "Get a quote" — gold tickets button removed per request
+  } else {
+    // 3b. Seasonal promo banner (edit "promo" in data/content.json; hidden after its end date)
+    var promo = data.promo;
+    if (promo && promo.text && (!promo.endDate || now <= new Date(promo.endDate + 'T23:59:59'))) {
+      show('#liveBanner');
+      document.body.classList.add('promo');
+      var pt = $('#liveBannerText');
+      if (pt) pt.textContent = promo.text;
+      var pl = $('#liveBannerLink');
+      if (pl) {
+        pl.textContent = promo.linkText || 'Learn more →';
+        pl.setAttribute('href', promo.link || '/contact');
+      }
+    }
+  }
+
+  // Live-event banner link goes to /play
+  if (liveEvent) {
+    var ll = $('#liveBannerLink');
+    if (ll) { ll.textContent = 'Join now →'; ll.setAttribute('href', '/play'); }
   }
 
   // 4. Highlight active nav link

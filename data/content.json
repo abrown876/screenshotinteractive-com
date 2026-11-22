@@ -52,5 +52,12 @@
       "venue": "Devon House",
       "ticketsOnSale": false
     }
-  ]
+  ],
+  "promo": {
+    "_comment": "Seasonal banner shown when no quiz is live and no Social Cine' tickets are on sale. Remove or change endDate to stop it.",
+    "text": "Christmas parties and staff events: December dates are filling",
+    "linkText": "Check your date →",
+    "link": "/contact?type=Corporate%20event",
+    "endDate": "2026-12-20"
+  }
 }
