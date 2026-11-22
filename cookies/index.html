@@ -3,15 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Photo Cookies Jamaica: Your Photo Printed on a Cookie | Screenshot Interactive</title>
-<meta name="description" content="See your photo on a cookie before you order. Edible-ink photo cookies in a box of 2 large or a box of 3, for birthdays, Mother's Day, weddings and brand gifts in Kingston.">
+<title>Sweet Selfie: Photo Cookies in Jamaica | Screenshot Interactive</title>
+<meta name="description" content="Sweet Selfie prints your photo on a fresh round cookie. Upload a photo, see how it looks, then order a box of 2 large or a box of 3 on WhatsApp. Kingston, Jamaica.">
 <link rel="canonical" href="https://screenshotinteractive.com/cookies">
 <link rel="icon" href="/assets/favicon.svg?v=brand22" type="image/svg+xml">
-<meta property="og:title" content="Photo Cookies Jamaica: Your Photo Printed on a Cookie | Screenshot Interactive">
-<meta property="og:description" content="See your photo on a cookie before you order. Edible-ink photo cookies in a box of 2 large or a box of 3, for birthdays, Mother's Day, weddings and brand gifts in Kingston.">
+<meta property="og:title" content="Sweet Selfie: Photo Cookies in Jamaica | Screenshot Interactive">
+<meta property="og:description" content="Sweet Selfie prints your photo on a fresh round cookie. Upload a photo, see how it looks, then order a box of 2 large or a box of 3 on WhatsApp. Kingston, Jamaica.">
+<meta property="og:image" content="https://screenshotinteractive.com/cookies/sweet-selfie-og.jpg">
 <meta property="og:url" content="https://screenshotinteractive.com/cookies">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F23C5D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -45,6 +47,28 @@
   </div>
 </header>
 <style>
+/* Sweet Selfie brand, scoped to this page: pink #F23C5D and yellow #FFDF79 from the 2021 logo kit. */
+.ss{--red:#F23C5D;--navy:#8A1F3A;--offwhite:#FFF6E6;--ss-yellow:#FFDF79;--ss-pink:#F23C5D}
+.ss .btn-primary{background:#DC2D4F}.ss .btn-primary:hover{background:#B91F3E}
+.ss-hero{background:var(--ss-pink);color:#fff;overflow:hidden;position:relative}
+.ss-hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:var(--ss-yellow);opacity:.22}
+.ss-hero .container{display:grid;grid-template-columns:auto minmax(0,1fr);gap:40px;align-items:center;padding-top:44px;padding-bottom:44px;position:relative;z-index:1}
+.ss-hero img{width:170px;height:auto;display:block}
+.ss-hero h1{color:#fff;margin:0 0 14px;font-size:clamp(34px,5vw,58px);line-height:1.02}
+.ss-hero h1 mark{background:none;color:var(--ss-yellow)}
+.ss-hero p{font-size:19px;line-height:1.5;color:rgba(255,255,255,.94);max-width:56ch;margin:0}
+.ss-hero .by{font:700 12px/1 Archivo,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--ss-yellow);margin-bottom:12px;display:block}
+@media (max-width:700px){.ss-hero .container{grid-template-columns:1fr;gap:20px;text-align:left}.ss-hero img{width:120px}}
+.ck-date{font:500 16px/1.2 Inter,sans-serif;padding:11px 12px;border:1.5px solid var(--line);border-radius:12px;width:100%;max-width:260px;color:var(--char);background:#fff}
+.ck-warn{font-size:14px;color:#9a3412;background:#fff4e5;border-radius:10px;padding:8px 12px;margin-top:10px}
+.ss-info{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:36px}
+@media (max-width:860px){.ss-info{grid-template-columns:1fr}}
+.ss-card{background:#fff;border:1.5px solid #f6d3da;border-radius:18px;padding:20px}
+.ss-card h3{font-size:20px;color:var(--navy);margin:0 0 8px}
+.ss-card p{font-size:15px;color:#444;margin:0 0 8px}
+.ss-card details summary{cursor:pointer;font-weight:600;color:var(--red);font-size:15px}
+.ss-card details p{font-size:13px;color:var(--gray);margin-top:8px}
+.ss-ig{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--red);text-decoration:none}
 /* Photo cookies preview. Uses the site's tokens (navy, red, offwhite, Archivo/Inter). Cookie on the left, choices on the right, the box underneath. */
 .ck-wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:32px;align-items:start}
 @media (max-width:860px){.ck-wrap{grid-template-columns:1fr}}
@@ -86,11 +110,15 @@
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 </style>
 
-  <section style="padding:48px 0 12px">
-    <div class="container" style="max-width:860px">
-      <div class="eyebrow">Photo cookies</div>
-      <h1 style="margin-top:8px;margin-bottom:16px">Your photo, on a cookie.</h1>
-      <p style="font-size:20px;line-height:1.5;color:#333">We print your photo or logo in edible ink straight onto a fresh round cookie. Birthdays, Mother's Day, weddings, brand launches and staff gifts. Upload a photo below to see how yours will look before you order.</p>
+<main class="ss">
+  <section class="ss-hero">
+    <div class="container">
+      <img src="/cookies/sweet-selfie-logo-light.png" width="330" height="480" alt="Sweet Selfie">
+      <div>
+        <span class="by">Sweet Selfie · by Screenshot Interactive</span>
+        <h1>We take your photos and print them on <mark>delicious cookies.</mark></h1>
+        <p>Your photo or logo, printed in edible ink on a fresh round sugar cookie. Birthdays, Mother's Day, weddings, brand launches and staff gifts. Upload a photo below and see yours before you order.</p>
+      </div>
     </div>
   </section>
 
@@ -109,6 +137,7 @@
             <p id="ckDropMsg">A photo from your phone or computer. Drop it here or choose one.</p>
             <label class="btn btn-primary" for="ckFile">Choose photo</label>
             <input id="ckFile" type="file" accept="image/*" class="sr-only">
+            <div class="ck-warn" id="ckWarn" hidden>This photo is quite small, so it may print a little soft. A bigger or sharper version will look better.</div>
           </div>
 
           <div>
@@ -131,6 +160,12 @@
             <button type="button" class="btn btn-ghost" id="ckReset" style="margin-top:6px">Recentre photo</button>
           </div>
 
+          <div>
+            <label class="ck-label" for="ckDate">When do you need them?</label>
+            <input class="ck-date" id="ckDate" type="date">
+            <p style="font-size:14px;color:var(--gray);margin:8px 0 0">Order at least 3 days ahead.</p>
+          </div>
+
           <div style="display:flex;flex-wrap:wrap;gap:12px">
             <a class="btn btn-primary btn-lg" id="ckOrder" href="https://wa.me/18763558685" target="_blank" rel="noopener">Order on WhatsApp →</a>
             <a class="btn btn-ghost btn-lg" href="/contact">Bulk or corporate order</a>
@@ -150,8 +185,31 @@
         <div class="ck-step"><div class="n">STEP 2</div><h4>Message us</h4><p>Tap Order on WhatsApp and send the same photo with your date. We'll confirm the price and pickup or delivery.</p></div>
         <div class="ck-step"><div class="n">STEP 3</div><h4>We print and box</h4><p>Your photo is printed in edible ink on fresh cookies and packed in a window gift box.</p></div>
       </div>
+
+      <div class="ss-info">
+        <div class="ss-card">
+          <h3>Timing</h3>
+          <p>We need 3 days from your order to bake, print and pack. Busy seasons like Mother's Day and Christmas fill up, so book early.</p>
+        </div>
+        <div class="ss-card">
+          <h3>Corporate and events</h3>
+          <p>Logo cookies for launches, client gifts and staff treats, or we bring the printer to your event and print guests' photos on the spot.</p>
+          <a class="ss-ig" href="/contact">Ask about corporate orders →</a>
+        </div>
+        <div class="ss-card">
+          <h3>Allergens</h3>
+          <p>Our cookies contain gluten and soy, and may contain traces of nuts and peanuts. Some contain eggs and dairy.</p>
+          <details><summary>Full ingredients</summary>
+            <p><b>Cookie:</b> flour (bleached wheat flour, malted barley flour, niacin, iron, thiamine mononitrate, riboflavin, folic acid), butter (cream, salt), sugar, eggs, vanilla, orange juice, baking powder, powdered egg whites, confectioners' sugar (sugar, corn starch), water, glycerin, vegetable and plant extract.</p>
+            <p><b>Edible ink:</b> water, ethanol, humectant, glycerin, artificial colouring (may contain one or more of FD&amp;C Red 40, Blue 1, Red 3, Yellow 5), emulsifier (polysorbate 80), preservative (methylparaben 0.1%).</p>
+          </details>
+        </div>
+      </div>
+
+      <p style="text-align:center;margin-top:32px"><a class="ss-ig" href="https://instagram.com/sweetselfieja" target="_blank" rel="noopener">See more on Instagram @sweetselfieja →</a></p>
     </div>
   </section>
+</main>
 
 <script>
 (() => {
@@ -163,12 +221,12 @@
 
   function examplePhoto(){
     const c = document.createElement('canvas'); c.width = c.height = 900; const g = c.getContext('2d');
-    const sky = g.createLinearGradient(0,0,0,900); sky.addColorStop(0,'#EB5C77'); sky.addColorStop(.55,'#ff9f7a'); sky.addColorStop(1,'#ffd98a');
+    const sky = g.createLinearGradient(0,0,0,900); sky.addColorStop(0,'#F23C5D'); sky.addColorStop(.55,'#ff9f7a'); sky.addColorStop(1,'#ffd98a');
     g.fillStyle = sky; g.fillRect(0,0,900,900);
     g.fillStyle = 'rgba(255,255,255,.5)'; g.beginPath(); g.arc(450,420,190,0,Math.PI*2); g.fill();
-    g.fillStyle = '#595496'; g.beginPath(); g.moveTo(0,700); g.quadraticCurveTo(250,600,450,690); g.quadraticCurveTo(680,780,900,660); g.lineTo(900,900); g.lineTo(0,900); g.fill();
+    g.fillStyle = '#8A1F3A'; g.beginPath(); g.moveTo(0,700); g.quadraticCurveTo(250,600,450,690); g.quadraticCurveTo(680,780,900,660); g.lineTo(900,900); g.lineTo(0,900); g.fill();
     let s = 7; const rnd = () => (s = (s*16807)%2147483647)/2147483647;
-    const cols = ['#595496','#ffffff','#00a676','#ffca28','#1A1A1A'];
+    const cols = ['#8A1F3A','#ffffff','#00a676','#FFDF79','#1A1A1A'];
     for (let i=0;i<120;i++){ g.fillStyle = cols[i%cols.length]; g.save(); g.translate(rnd()*900, rnd()*620); g.rotate(rnd()*6); g.fillRect(-8,-4,16,8); g.restore(); }
     g.fillStyle = '#1A1A1A'; g.textAlign = 'center';
     g.font = '900 120px Archivo, sans-serif'; g.fillText('Happy', 450, 400); g.fillText('Birthday!', 450, 520);
@@ -217,11 +275,11 @@
     g.restore();
     circle(g, CX, cy, R); g.lineWidth=3; g.strokeStyle='rgba(90,45,15,.5)'; g.stroke();
     if (S.safe){
-      g.save(); g.setLineDash([14,10]); g.lineWidth=4; g.strokeStyle='#595496'; circle(g, CX, cy, Rp*.86); g.stroke();
+      g.save(); g.setLineDash([14,10]); g.lineWidth=4; g.strokeStyle='#F23C5D'; circle(g, CX, cy, Rp*.86); g.stroke();
       const ly = cy + Rp*.66, txt='Keep text and faces inside';
       g.setLineDash([]); g.font='600 26px Inter, sans-serif'; g.textAlign='center'; g.textBaseline='middle';
       const tw = g.measureText(txt).width + 32; g.fillStyle='rgba(255,255,255,.94)'; rr(g, CX-tw/2, ly-22, tw, 44, 22); g.fill();
-      g.fillStyle='#595496'; g.fillText(txt, CX, ly); g.restore();
+      g.fillStyle='#C2244A'; g.fillText(txt, CX, ly); g.restore();
     }
   }
 
@@ -248,7 +306,8 @@
     $('ckExample').hidden = !S.example;
     $('ckNote').textContent = S.box==='two' ? 'Large round cookie · box of 2' : 'Round cookie · box of 3';
     $('ckBoxTitle').textContent = S.box==='two' ? 'In the box of 2' : 'In the box of 3';
-    const msg = `Hi Screenshot! I'd like to order photo cookies: a box of ${S.box==='two'?'2 large cookies':'3 cookies'}. I'll send my photo here.`;
+    const d = $('ckDate').value ? new Date($('ckDate').value+'T12:00').toLocaleDateString('en-JM',{weekday:'long',day:'numeric',month:'long'}) : '';
+    const msg = `Hi Sweet Selfie! I'd like to order a box of ${S.box==='two'?'2 large photo cookies':'3 photo cookies'}${d?' for '+d:''}. I'll send my photo here.`;
     $('ckOrder').href = 'https://wa.me/18763558685?text=' + encodeURIComponent(msg);
   }
 
@@ -256,7 +315,7 @@
   function loadFile(f){
     if (!f || !f.type.startsWith('image/')) { say('That file is not a photo. Choose a JPG or PNG.'); return; }
     const img = new Image();
-    img.onload = () => { S.img=img; S.example=false; S.zoom=1; S.px=S.py=0; $('ckZoom').value=100; $('ckZoomOut').value='100%'; render(); };
+    img.onload = () => { $('ckWarn').hidden = Math.min(img.naturalWidth,img.naturalHeight) >= 900; S.img=img; S.example=false; S.zoom=1; S.px=S.py=0; $('ckZoom').value=100; $('ckZoomOut').value='100%'; render(); };
     img.onerror = () => say('That photo could not be opened. Try a JPG or PNG (some iPhone HEIC photos need converting first).');
     img.src = URL.createObjectURL(f);
   }
@@ -276,6 +335,8 @@
   $('ckInk').addEventListener('change', e => { S.ink=e.target.checked; render(); });
   $('ckSafe').addEventListener('change', e => { S.safe=e.target.checked; render(); });
   $('ckReset').addEventListener('click', () => { S.px=S.py=0; render(); });
+  { const m=new Date(); m.setDate(m.getDate()+3); const iso=new Date(m.getTime()-m.getTimezoneOffset()*6e4).toISOString().slice(0,10); $('ckDate').min=iso; }
+  $('ckDate').addEventListener('change', render);
 
   const pts = new Map(); let pinch0=0, zoom0=1;
   const scale = () => W / C.getBoundingClientRect().width;
@@ -313,7 +374,7 @@
         <a href="/screen-test">Screen Test</a>
         <a href="/social-cine">Social Cine'</a>
         <a href="/work">Work</a>
-        <a href="/cookies">Photo Cookies</a>
+        <a href="/cookies">Sweet Selfie Cookies</a>
         <a href="/about">About</a>
       </div>
       <div>
